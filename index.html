@@ -1,0 +1,3079 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DH Delgado Hern&aacute;ndez &amp; Asociados | Contadores, Auditores, Consultores Empresariales</title>
+<meta name="description" content="DH Delgado Hern&aacute;ndez & Asociados - Firma de contadores, auditores y consultores empresariales con m&aacute;s de 30 a&ntilde;os de experiencia en Rep&uacute;blica Dominicana.">
+<link rel="canonical" href="https://www.delgadohauditores.com">
+<meta property="og:url" content="https://www.delgadohauditores.com">
+<meta property="og:title" content="DH Delgado Hern&aacute;ndez &amp; Asociados | Contadores, Auditores, Consultores Empresariales">
+<meta property="og:description" content="Firma de contadores, auditores y consultores empresariales con m&aacute;s de 30 a&ntilde;os de experiencia en Rep&uacute;blica Dominicana.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #0B4DA2;
+  --blue-dark: #0D2044;
+  --blue-deeper: #0A1628;
+  --blue-light: #007CBB;
+  --blue-soft: #1A4E86;
+  --red: #DE3235;
+  --red-light: #E8454A;
+  --red-deep: #C42A2D;
+  --white: #FFFFFF;
+  --off-white: #F5F7FB;
+  --light-gray: #EBF0F7;
+  --cream-blue: #E8EDF5;
+  --text-dark: #0D2044;
+  --text-body: #3D4450;
+  --text-muted: #6B7B8D;
+  --border: #D4DCE8;
+  --border-light: #E8EDF5;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm: 0 2px 12px rgba(13,32,68,0.06);
+  --shadow-md: 0 4px 24px rgba(13,32,68,0.10);
+  --shadow-lg: 0 8px 40px rgba(13,32,68,0.13);
+  --shadow-blue: 0 4px 20px rgba(11,77,162,0.20);
+  --shadow-red: 0 4px 16px rgba(222,50,53,0.20);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--white);
+  color: var(--text-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul { list-style: none; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.section-title span {
+  color: var(--blue);
+}
+
+.section-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--red));
+  margin: 24px 0;
+  border-radius: 2px;
+}
+
+.gold-line-center {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--red));
+  margin: 24px auto;
+  border-radius: 2px;
+}
+
+/* Scroll Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 14px 0;
+  transition: all 0.4s ease;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar.scrolled {
+  background: rgba(255,255,255,0.97);
+  padding: 10px 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(13,32,68,0.08);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+  transition: height var(--transition), opacity 0.4s ease;
+}
+
+.navbar .navbar-logo img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.navbar.scrolled .navbar-logo img {
+  opacity: 1;
+  height: 42px;
+}
+
+.navbar-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+}
+
+.navbar.scrolled .navbar-logo-text {
+  color: var(--text-dark);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-menu a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  position: relative;
+  padding: 4px 0;
+}
+
+.navbar.scrolled .nav-menu a {
+  color: var(--text-dark);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--red);
+  transition: width var(--transition);
+}
+
+.nav-menu a:hover {
+  color: var(--red);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  background: linear-gradient(135deg, var(--red), var(--red-deep));
+  padding: 10px 24px;
+  border-radius: 3px;
+  transition: all var(--transition);
+}
+
+.nav-cta::after { display: none !important; }
+
+.navbar.scrolled .nav-cta {
+  color: var(--white) !important;
+}
+
+.nav-cta:hover {
+  background: var(--red-light) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(212,32,39,0.3);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--text-dark);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar.scrolled .hamburger span {
+  background: var(--text-dark);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 22, 40, 0.98);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu a {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--white);
+  transition: color var(--transition);
+}
+
+.mobile-menu a:hover {
+  color: var(--red);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(11,77,162,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(222,50,53,0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: heroGlow 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes heroGlow {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.15) translate(20px, -20px); }
+}
+
+/* Geometric Accent Lines */
+.hero-accent {
+  position: absolute;
+  top: 20%;
+  right: 8%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(11,77,162,0.06);
+  transform: rotate(45deg);
+}
+
+.hero-accent-2 {
+  position: absolute;
+  bottom: 15%;
+  right: 12%;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(11,77,162,0.04);
+  transform: rotate(30deg);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  padding-top: 100px;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-centered {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-centered .hero-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-centered .hero-buttons {
+  justify-content: center;
+}
+
+.hero-centered .hero-stats {
+  justify-content: center;
+}
+
+.hero-logo-main {
+  margin-bottom: 36px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.hero-logo-main img {
+  height: 160px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.hero-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease 0.5s forwards;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease 0.7s forwards;
+}
+
+.hero h1 span {
+  color: var(--red);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 540px;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease 0.9s forwards;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease 1.1s forwards;
+}
+
+.btn-primary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+  color: var(--white);
+  padding: 16px 36px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--red-light) 0%, var(--red) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-red);
+}
+
+.btn-outline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--blue);
+  padding: 16px 36px;
+  border: 2px solid var(--blue);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--white);
+  transform: translateY(-2px);
+  background: var(--blue);
+  box-shadow: var(--shadow-blue);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid var(--light-gray);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease 1.3s forwards;
+}
+
+.hero-stat h3 {
+  font-size: 2.4rem;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.hero-stat p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeUp 1s ease 1.6s forwards;
+  z-index: 2;
+}
+
+.scroll-indicator span {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--blue), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.about {
+  background: var(--white);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(11,77,162,0.12), transparent);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--text-body);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 32px;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.about-highlight {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.about-highlight:hover {
+  background: var(--white);
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-blue);
+}
+
+.about-highlight h3 {
+  font-size: 2rem;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.about-highlight p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.about-image-area {
+  position: relative;
+}
+
+.about-image-frame {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, var(--off-white) 0%, var(--light-gray) 100%);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image-frame .placeholder-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: rgba(11,77,162,0.12);
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-image-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(11,77,162,0.15);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* ============================================
+   MISION / VISION / VALORES
+   ============================================ */
+.mvv {
+  background: linear-gradient(180deg, var(--off-white) 0%, var(--light-gray) 100%);
+  position: relative;
+}
+
+.mvv-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.mvv-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.mvv-card {
+  padding: 48px 40px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.mvv-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.mvv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--blue), var(--red));
+}
+
+.mvv-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.mvv-card-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.mvv-card h3 {
+  font-size: 1.5rem;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.mvv-card p {
+  color: var(--text-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* Values Grid */
+.values-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.value-card {
+  padding: 32px 20px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.value-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-blue);
+}
+
+.value-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(11,77,162,0.08), rgba(222,50,53,0.05));
+  border-radius: 50%;
+  transition: all var(--transition);
+}
+
+.value-card:hover .value-icon {
+  background: linear-gradient(135deg, rgba(11,77,162,0.15), rgba(222,50,53,0.10));
+}
+
+.value-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.value-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+/* ============================================
+   FOUNDERS / TEAM SECTION
+   ============================================ */
+.founders {
+  background: var(--white);
+  position: relative;
+}
+
+.founders::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(11,77,162,0.12), transparent);
+}
+
+.founders-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.founders-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.founder-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.founder-card:hover {
+  border-color: rgba(11,77,162,0.25);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.founder-photo {
+  position: relative;
+  min-height: 400px;
+  background: linear-gradient(180deg, var(--off-white) 0%, var(--light-gray) 100%);
+  overflow: hidden;
+}
+
+.founder-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s ease;
+}
+
+.founder-card:hover .founder-photo img {
+  transform: scale(1.03);
+}
+
+.founder-photo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(255,255,255,0.6), transparent);
+  pointer-events: none;
+}
+
+.founder-info {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.founder-info h3 {
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.founder-title {
+  font-size: 0.82rem;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+
+.founder-details {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.founder-details li {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  padding: 8px 16px;
+  padding-left: 32px;
+  position: relative;
+  line-height: 1.6;
+  background: var(--off-white);
+  border-radius: 4px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.founder-details li:hover {
+  border-left-color: var(--blue);
+  background: var(--light-gray);
+}
+
+.founder-details li::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 15px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--red));
+}
+
+/* ============================================
+   COLLABORATORS SECTION
+   ============================================ */
+.team {
+  background: var(--off-white);
+  position: relative;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.team-member {
+  padding: 24px 16px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.team-member:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.team-member-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(11,77,162,0.08), rgba(222,50,53,0.04));
+  border: 2px solid rgba(11,77,162,0.10);
+  overflow: hidden;
+}
+
+.team-member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member-avatar .initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.team-member h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.team-member p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services {
+  background: var(--white);
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(11,77,162,0.12), transparent);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.service-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-item:hover {
+  border-color: rgba(11,77,162,0.25);
+  box-shadow: var(--shadow-md);
+}
+
+.service-item.active {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-blue);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px;
+  cursor: pointer;
+  transition: background var(--transition);
+  position: relative;
+}
+
+.service-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--blue), var(--red));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.service-item.active .service-header::before,
+.service-item:hover .service-header::before {
+  opacity: 1;
+}
+
+.service-header:hover {
+  background: rgba(11,77,162,0.02);
+}
+
+.service-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--blue);
+  font-weight: 700;
+  min-width: 44px;
+  opacity: 0.3;
+  transition: all var(--transition);
+}
+
+.service-item.active .service-number {
+  opacity: 1;
+  color: var(--red);
+}
+
+.service-icon-wrap {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(11,77,162,0.10), rgba(0,124,187,0.06));
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+.service-item.active .service-icon-wrap {
+  background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+}
+
+.service-icon-wrap svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke var(--transition);
+}
+
+.service-item.active .service-icon-wrap svg {
+  stroke: var(--white);
+}
+
+.service-title-area {
+  flex: 1;
+}
+
+.service-title-area h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.service-item.active .service-title-area h3 {
+  color: var(--blue);
+}
+
+.service-toggle {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  background: var(--off-white);
+  border-radius: 50%;
+}
+
+.service-item.active .service-toggle {
+  transform: rotate(180deg);
+  background: rgba(11,77,162,0.10);
+}
+
+.service-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 2;
+}
+
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-content-inner {
+  padding: 0 32px 32px 32px;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Service Visual Banner */
+.service-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 28px;
+  margin: 20px 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(11,77,162,0.06) 0%, rgba(0,124,187,0.04) 50%, rgba(222,50,53,0.03) 100%);
+  border: 1px solid rgba(11,77,162,0.08);
+}
+
+.service-banner-icon {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(11,77,162,0.25);
+}
+
+.service-banner-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-banner-text {
+  flex: 1;
+}
+
+.service-banner-text h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  margin-bottom: 6px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.service-banner-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.service-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.service-banner-badge svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--white);
+  fill: none;
+  stroke-width: 2;
+}
+
+.service-content-inner ul {
+  list-style: none;
+}
+
+.service-content-inner ul li {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.service-content-inner ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--red));
+  border-radius: 1px;
+}
+
+.service-content-inner h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-content-inner p {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* Packages Table */
+.packages-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+.packages-table thead th {
+  background: rgba(11,77,162,0.06);
+  color: var(--blue);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--blue);
+}
+
+.packages-table tbody td {
+  padding: 14px 16px;
+  color: var(--text-body);
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.packages-table tbody tr:hover {
+  background: rgba(11,77,162,0.03);
+}
+
+.packages-table .pkg-name {
+  color: var(--text-dark);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.packages-note {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: rgba(11,77,162,0.04);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+/* ============================================
+   CLIENTS SECTION
+   ============================================ */
+.clients {
+  background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.client-card {
+  padding: 24px 16px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.client-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.client-card span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  transition: color var(--transition);
+}
+
+.client-card:hover span {
+  color: var(--blue);
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact {
+  background: var(--white);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(11,77,162,0.12), transparent);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.contact-info-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(11,77,162,0.08), rgba(222,50,53,0.04));
+  border: 1px solid rgba(11,77,162,0.08);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.contact-info-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.contact-info-item h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.contact-info-item p,
+.contact-info-item a {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.contact-info-item a:hover {
+  color: var(--blue);
+}
+
+.contact-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11,77,162,0.06);
+  border: 1px solid rgba(11,77,162,0.12);
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+  border-color: var(--blue);
+  box-shadow: var(--shadow-blue);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 1.5;
+  transition: stroke var(--transition);
+}
+
+.social-link:hover svg {
+  stroke: var(--white);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  padding: 14px 16px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(11,77,162,0.08);
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230B4DA2' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.form-group select option {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-soft) 100%);
+  color: var(--white);
+  padding: 16px 36px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all var(--transition);
+  width: 100%;
+}
+
+.form-submit:hover {
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-blue);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: linear-gradient(180deg, #0D2044 0%, #0A1628 100%);
+  padding: 64px 0 0;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--red), var(--blue));
+}
+
+.footer-quote {
+  text-align: center;
+  padding-bottom: 48px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.footer-quote cite {
+  display: block;
+  margin-top: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--red);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+
+.footer-brand img {
+  height: 56px;
+  width: auto;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.5);
+  padding: 5px 0;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-contact-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.footer-contact-item svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--red);
+  fill: none;
+  stroke-width: 1.5;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-contact-item p,
+.footer-contact-item a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+.footer-contact-item a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about-image-area {
+    order: -1;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-accent, .hero-accent-2 { display: none; }
+
+  .mvv-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .founder-card {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-photo {
+    min-height: 350px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .service-content-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .service-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .service-banner-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .service-banner-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .service-header {
+    padding: 20px 24px;
+  }
+
+  .service-number {
+    font-size: 1.3rem;
+    min-width: 36px;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .footer-brand img {
+    margin: 0 auto 16px;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .section-padding {
+    padding: 72px 0;
+  }
+
+  .packages-table {
+    font-size: 0.78rem;
+  }
+
+  .packages-table thead th,
+  .packages-table tbody td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons a {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ============================================
+   SCROLL BAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(11,77,162,0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(11,77,162,0.45);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+::selection {
+  background: rgba(11,77,162,0.15);
+  color: var(--text-dark);
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVBAR
+     ============================================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#hero" class="navbar-logo">
+      <!-- INSERTAR: logo.png -->
+      <img src="logo.png" alt="DH Delgado Hern&aacute;ndez &amp; Asociados">
+    </a>
+    <div class="nav-menu" id="navMenu">
+      <a href="#about">Nosotros</a>
+      <a href="#mision">Misi&oacute;n</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">Nosotros</a>
+  <a href="#mision" onclick="closeMobile()">Misi&oacute;n y Visi&oacute;n</a>
+  <a href="#equipo" onclick="closeMobile()">Equipo</a>
+  <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="#clientes" onclick="closeMobile()">Clientes</a>
+  <a href="#contacto" onclick="closeMobile()">Contacto</a>
+</div>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero" id="hero">
+  <div class="hero-accent"></div>
+  <div class="hero-accent-2"></div>
+  <div class="container">
+    <div class="hero-content hero-centered">
+      <div class="hero-logo-main">
+        <img src="logo.png" alt="DH Delgado Hern&aacute;ndez &amp; Asociados">
+      </div>
+      <p class="hero-tagline">Contadores &middot; Auditores &middot; Consultores Empresariales</p>
+      <h1>Crecimiento, <span>calidad</span> y eficiencia</h1>
+      <p class="hero-subtitle">Impulsamos el &eacute;xito empresarial con soluciones financieras confiables, auditor&iacute;as rigurosas y consultor&iacute;a estrat&eacute;gica integral desde 1994.</p>
+      <div class="hero-buttons">
+        <a href="#servicios" class="btn-primary">
+          Nuestros servicios
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#contacto" class="btn-outline">Solicitar consulta</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <h3>30+</h3>
+          <p>A&ntilde;os de experiencia</p>
+        </div>
+        <div class="hero-stat">
+          <h3>25+</h3>
+          <p>Clientes activos</p>
+        </div>
+        <div class="hero-stat">
+          <h3>18+</h3>
+          <p>Profesionales</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section class="about section-padding" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal-left">
+        <span class="section-label">Acerca de la firma</span>
+        <h2 class="section-title">Compromiso con la <span>excelencia</span> empresarial</h2>
+        <div class="gold-line"></div>
+        <p>Nuestros servicios inician en el a&ntilde;o 1994, ante la necesidad de proveer a las empresas de herramientas confiables y oportunas, mediante la modalidad de contabilidad por igualas, auditor&iacute;as financieras y asesor&iacute;a administrativa.</p>
+        <p>En la actualidad, afianzamos nuestro compromiso con servicios innovadores que fortalezcan y optimicen los recursos empresariales, enfocados a resultados planificados y sostenibles.</p>
+        <div class="about-highlights">
+          <div class="about-highlight">
+            <h3>30+</h3>
+            <p>A&ntilde;os</p>
+          </div>
+          <div class="about-highlight">
+            <h3>11</h3>
+            <p>Colaboradores</p>
+          </div>
+          <div class="about-highlight">
+            <h3>7</h3>
+            <p>Asesores</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-image-area reveal-right">
+        <div class="about-image-frame">
+          <span class="placeholder-text">DH</span>
+          <!-- INSERTAR: imagen-oficina.jpg o foto representativa -->
+        </div>
+        <div class="about-image-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MISION / VISION / VALORES
+     ============================================ -->
+<section class="mvv section-padding" id="mision">
+  <div class="container">
+    <div class="mvv-header reveal">
+      <span class="section-label">Nuestra filosof&iacute;a</span>
+      <h2 class="section-title">Misi&oacute;n, Visi&oacute;n y <span>Valores</span></h2>
+      <div class="gold-line-center"></div>
+    </div>
+
+    <div class="mvv-columns">
+      <div class="mvv-card reveal-left">
+        <div class="mvv-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </div>
+        <h3>Misi&oacute;n</h3>
+        <p>Proveer a nuestros clientes de herramientas e informaciones oportunas, para la planificaci&oacute;n y desarrollo de las estrategias necesarias que les permitan alcanzar sus objetivos y optimizar sus recursos e inversiones.</p>
+      </div>
+      <div class="mvv-card reveal-right">
+        <div class="mvv-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Visi&oacute;n</h3>
+        <p>Ser una firma de contadores, auditores y consultores empresariales apegados a las normas de &eacute;tica profesional, enfocados en crear una cultura de calidad y confiabilidad en nuestros servicios.</p>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="values-header reveal">
+      <span class="section-label">Nuestros valores</span>
+      <h2 class="section-title" style="font-size: clamp(1.5rem, 3vw, 2rem);">Principios que nos <span>definen</span></h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>&Eacute;tica</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h4>Responsabilidad</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h4>Honestidad</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h4>Confidencialidad</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Integridad</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h4>Solidaridad</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h4>Calidad</h4>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h4>Trabajo en equipo</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOUNDERS
+     ============================================ -->
+<section class="founders section-padding" id="equipo">
+  <div class="container">
+    <div class="founders-header reveal">
+      <span class="section-label">Liderazgo</span>
+      <h2 class="section-title">Socios <span>Fundadores</span></h2>
+      <div class="gold-line-center"></div>
+      <p class="section-subtitle" style="margin: 12px auto 0;">Profesionales con d&eacute;cadas de experiencia liderando soluciones financieras y estrat&eacute;gicas.</p>
+    </div>
+
+    <div class="founders-grid">
+      <!-- Founder 1: Luis A. Delgado -->
+      <div class="founder-card reveal">
+        <div class="founder-photo">
+          <!-- INSERTAR: foto-luis-delgado.jpg -->
+          <img src="foto-luis-delgado.jpg" alt="Lic. Luis A. Delgado - Socio Ejecutivo">
+        </div>
+        <div class="founder-info">
+          <h3>Lic. Luis A. Delgado</h3>
+          <span class="founder-title">Socio Ejecutivo &mdash; Coordinador Divisi&oacute;n Servicios Financieros</span>
+          <ul class="founder-details">
+            <li>Lic. en Contabilidad y Auditor&iacute;a, UNPHU</li>
+            <li>Maestr&iacute;a en Gerencia Financiera</li>
+            <li>Diplomados en RRHH, Gerencia de Mercadeo y Ventas, Auditor&iacute;a Externa</li>
+            <li>Especialista en Dise&ntilde;o de Sistemas Contables</li>
+            <li>Catedr&aacute;tico universitario: UCATECI, UNPHU</li>
+            <li>M&aacute;s de 20 a&ntilde;os en Contabilidad, Finanzas, Impuestos y Auditor&iacute;a</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Founder 2: Fantina Hernandez -->
+      <div class="founder-card reveal">
+        <div class="founder-photo">
+          <!-- INSERTAR: foto-fantina-hernandez.jpg -->
+          <img src="foto-fantina-hernandez.jpg" alt="Lic. Fantina Hern&aacute;ndez - Socia Ejecutiva">
+        </div>
+        <div class="founder-info">
+          <h3>Lic. Fantina Hern&aacute;ndez</h3>
+          <span class="founder-title">Socia Ejecutiva &mdash; Coordinadora Planificaci&oacute;n Estrat&eacute;gica y RRHH</span>
+          <ul class="founder-details">
+            <li>Lic. en Contabilidad y Auditor&iacute;a, UNPHU</li>
+            <li>Catedr&aacute;tica universitaria: UCATECI, UNPHU</li>
+            <li>Diplomados en RRHH, Innovaci&oacute;n, Alta Gerencia, Auditor&iacute;a Externa</li>
+            <li>T&eacute;cnica en Formulaci&oacute;n de Proyectos de Inversi&oacute;n P&uacute;blica (MEPyD)</li>
+            <li>Especialista en SISMAP Municipal (CAF)</li>
+            <li>Desarrollo Executive en Innovaci&oacute;n de Mipymes &mdash; EOI Espa&ntilde;a</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     COLLABORATORS
+     ============================================ -->
+<section class="team section-padding" id="colaboradores">
+  <div class="container">
+    <div class="team-header reveal">
+      <span class="section-label">Nuestro equipo</span>
+      <h2 class="section-title">Colaboradores y <span>Asesores</span></h2>
+      <div class="gold-line-center"></div>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">NR</span></div>
+        <h4>Nelson A. Rubio</h4>
+        <p>Socio, Encargado Divisi&oacute;n de Gesti&oacute;n Fiscal</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">TB</span></div>
+        <h4>Ing. Tony Beato</h4>
+        <p>Asesor Corporativo en Sistema Inform&aacute;tico</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">JP</span></div>
+        <h4>Ing. Jos&eacute; Polonia</h4>
+        <p>Asesor Sistema Inform&aacute;tico DH Academy</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">JM</span></div>
+        <h4>Ing. Julio Morlan</h4>
+        <p>Asesor en Sistema Inform&aacute;tico</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">NN</span></div>
+        <h4>Lic. Nilda M. Nivar</h4>
+        <p>Asesora de Planificaci&oacute;n</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">EL</span></div>
+        <h4>Ing. Agron. Eduardo L&oacute;pez</h4>
+        <p>Asesor de Proyectos de Inversi&oacute;n P&uacute;blica</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">MP</span></div>
+        <h4>Lic. Mar&iacute;a Rub&iacute; Pe&ntilde;a</h4>
+        <p>Psic&oacute;loga, Asesora en Evaluaci&oacute;n y Gesti&oacute;n de RRHH</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">RD</span></div>
+        <h4>Lic. Ra&uacute;l D&iacute;az</h4>
+        <p>Asesor T&eacute;cnico de Planificaci&oacute;n</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">DD</span></div>
+        <h4>Lic. Deyvis de Js. Delgado</h4>
+        <p>Auditor Financiero</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">EA</span></div>
+        <h4>Lic. Eddy E. Abreu</h4>
+        <p>Auditor Analista de Gesti&oacute;n Fiscal</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">NM</span></div>
+        <h4>Licda. Nicole Mata</h4>
+        <p>Auditora, Coordinadora de Planificaci&oacute;n</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">RC</span></div>
+        <h4>Lic. Rafael Alex. C&aacute;ceres</h4>
+        <p>Auditor Senior</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">RR</span></div>
+        <h4>Rosayra De la Rosa</h4>
+        <p>Auditor Senior</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">WA</span></div>
+        <h4>Winiffer Ayesa</h4>
+        <p>Auditor Senior</p>
+      </div>
+      <div class="team-member reveal">
+        <div class="team-member-avatar"><span class="initials">AO</span></div>
+        <h4>Altagracia Ojeda</h4>
+        <p>Encargada de Servicios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICES
+     ============================================ -->
+<section class="services section-padding" id="servicios">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">Soluciones integrales</span>
+      <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+      <div class="gold-line-center"></div>
+      <p class="section-subtitle" style="margin: 12px auto 0;">Ofrecemos un portafolio completo de servicios profesionales dise&ntilde;ados para fortalecer y optimizar su empresa.</p>
+    </div>
+
+    <div class="services-list">
+
+      <!-- Service 1 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">01</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>Contabilidad y Auditor&iacute;a</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Gesti&oacute;n Contable Integral</h4>
+                <p>Organizamos y supervisamos toda la estructura contable de su empresa, desde la instalaci&oacute;n de sistemas hasta la preparaci&oacute;n de estados financieros y auditor&iacute;as especializadas.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Servicio Estrella</span>
+              </div>
+            </div>
+            <ul>
+              <li>Instalaci&oacute;n de sistemas contables adaptados a la actividad de la empresa</li>
+              <li>Organizaci&oacute;n de documentaci&oacute;n contable por &aacute;rea operativa</li>
+              <li>Elaboraci&oacute;n y ejecuci&oacute;n de manuales de soporte</li>
+              <li>Entrenamiento y supervisi&oacute;n del personal de contabilidad</li>
+              <li>An&aacute;lisis y revisi&oacute;n mensual de registros contables</li>
+              <li>Preparaci&oacute;n de informes y estados financieros individuales y corporativos</li>
+              <li>Auditor&iacute;a de operaciones y de escritorio: examen cr&iacute;tico, sistem&aacute;tico y detallado de sistemas de informaci&oacute;n y control interno</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">02</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>Dise&ntilde;o e Implementaci&oacute;n de Sistemas Inform&aacute;ticos</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 8 10 11 7 14"/><line x1="12" y1="11" x2="17" y2="11"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Tecnolog&iacute;a a la Medida de su Empresa</h4>
+                <p>Desarrollamos e implementamos sistemas inform&aacute;ticos personalizados para automatizar procesos contables, administrativos y operativos de su organizaci&oacute;n.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg> Innovaci&oacute;n Digital</span>
+              </div>
+            </div>
+            <ul>
+              <li>Desarrollo e instalaci&oacute;n de sistemas: contabilidad, seguros m&eacute;dicos, farmacia, servicios hospitalarios</li>
+              <li>M&oacute;dulos: compras, facturaci&oacute;n, ventas, cuentas por cobrar y pagar, inventario, RRHH, impuestos</li>
+              <li>Sistemas ajustados a la naturaleza de cada empresa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">03</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>Servicios Impositivos y Fiscales</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><path d="M9 15l3-3 3 3"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Cumplimiento Fiscal Garantizado</h4>
+                <p>Gestionamos todas sus obligaciones tributarias ante la DGII y TSS, asegurando el cumplimiento oportuno y la optimizaci&oacute;n de su carga impositiva dentro del marco legal.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Seguridad Fiscal</span>
+              </div>
+            </div>
+            <ul>
+              <li>Declaraciones fiscales ante la DGII: ISR, ITBIS, retenciones y retribuciones</li>
+              <li>Registro y actualizaci&oacute;n en la TSS</li>
+              <li>Registro como proveedor del Estado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">04</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>Consultor&iacute;a Financiera y Administrativa</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Fortalezca su Gesti&oacute;n Empresarial</h4>
+                <p>Diagnosticamos, dise&ntilde;amos e implementamos sistemas administrativos y financieros que impulsan el crecimiento y la eficiencia de su empresa.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg> Crecimiento Estrat&eacute;gico</span>
+              </div>
+            </div>
+            <ul>
+              <li>Diagn&oacute;stico, desarrollo e implementaci&oacute;n de sistemas administrativos</li>
+              <li>An&aacute;lisis y evaluaci&oacute;n de situaci&oacute;n financiera personal y corporativa</li>
+              <li>Asesor&iacute;a y evaluaci&oacute;n de cooperativas empresariales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">05</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>Consultor&iacute;a en Recursos Humanos</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Capital Humano como Ventaja Competitiva</h4>
+                <p>Ofrecemos soluciones integrales en gesti&oacute;n de talento: desde perfiles de puestos y n&oacute;minas hasta evaluaciones de desempe&ntilde;o y planes de mejora continua.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> Servicio Integral</span>
+              </div>
+            </div>
+            <h4>Subservicios</h4>
+            <ul>
+              <li>An&aacute;lisis y Evaluaci&oacute;n de Perfil de Puestos</li>
+              <li>Manejo de N&oacute;minas y Retenciones (C&oacute;digo Laboral RD)</li>
+              <li>Amarre TSS vs Contabilidad</li>
+              <li>Implementaci&oacute;n de Plataforma SIRLA</li>
+              <li>Manual de Organizaci&oacute;n</li>
+              <li>Manual de Procedimientos</li>
+              <li>Manual de Pol&iacute;ticas y Controles Internos</li>
+              <li>Manual de Formatos y Documentos</li>
+              <li>Detecci&oacute;n de Necesidades de Capacitaci&oacute;n</li>
+              <li>Jornadas de Capacitaci&oacute;n al Personal</li>
+              <li>Evaluaci&oacute;n de Desempe&ntilde;o</li>
+              <li>Planes de Mejora</li>
+              <li>Reclutamiento y Selecci&oacute;n de Personal</li>
+              <li>Pruebas Psicom&eacute;tricas</li>
+            </ul>
+
+            <h4>Paquetes de Servicios</h4>
+            <table class="packages-table">
+              <thead>
+                <tr>
+                  <th>Paquete</th>
+                  <th>Servicios incluidos</th>
+                  <th>Modalidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="pkg-name">B&aacute;sico</td>
+                  <td>Perfiles, n&oacute;mina, retenciones, TSS, SIRLA</td>
+                  <td>Anual o semestral</td>
+                </tr>
+                <tr>
+                  <td class="pkg-name">Estandarizado</td>
+                  <td>Manuales + n&oacute;mina + SIRLA</td>
+                  <td>12 meses</td>
+                </tr>
+                <tr>
+                  <td class="pkg-name">Integral</td>
+                  <td>Todos los servicios + psicom&eacute;tricas + desempe&ntilde;o</td>
+                  <td>Anual + seguimiento</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="packages-note">
+              <strong>Incluido en todos los paquetes:</strong> informes ejecutivos peri&oacute;dicos, entregables Word/Excel, capacitaciones on-the-job, cumplimiento C&oacute;digo Laboral RD, Ley 87-01, TSS, SISALRIL.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">06</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>Consultor&iacute;a en Planificaci&oacute;n Estrat&eacute;gica</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Dirija su Organizaci&oacute;n con Visi&oacute;n</h4>
+                <p>Desarrollamos planes estrat&eacute;gicos, operativos y de gesti&oacute;n p&uacute;blica que alinean los objetivos de su instituci&oacute;n con resultados medibles y sostenibles.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Resultados Medibles</span>
+              </div>
+            </div>
+            <ul>
+              <li>Planes estrat&eacute;gicos institucionales</li>
+              <li>Seguimiento de planes operativos y de acci&oacute;n</li>
+              <li>Gesti&oacute;n p&uacute;blica y planes de desarrollo municipal</li>
+              <li>Autodiagn&oacute;stico CAF</li>
+              <li>Encuestas de satisfacci&oacute;n</li>
+              <li>Monitoreo de indicadores de gesti&oacute;n</li>
+              <li>Proyectos de pol&iacute;ticas p&uacute;blicas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 7 -->
+      <div class="service-item reveal" data-service>
+        <div class="service-header" onclick="toggleService(this)">
+          <span class="service-number">07</span>
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <div class="service-title-area">
+            <h3>DH Academy &mdash; Capacitaci&oacute;n y Formaci&oacute;n</h3>
+          </div>
+          <div class="service-toggle">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+        </div>
+        <div class="service-content">
+          <div class="service-content-inner">
+            <div class="service-banner">
+              <div class="service-banner-icon">
+                <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+              </div>
+              <div class="service-banner-text">
+                <h4>Formaci&oacute;n Profesional Continua</h4>
+                <p>Diplomados, talleres y capacitaciones en contabilidad, finanzas, RRHH y fiscalidad. Modalidad virtual y presencial para profesionales y empresas.</p>
+                <span class="service-banner-badge"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Certificaciones</span>
+              </div>
+            </div>
+            <p>Plataforma de formaci&oacute;n para empleados, profesionales y p&uacute;blico general. Modalidad virtual y presencial.</p>
+
+            <h4>Diplomados</h4>
+            <ul>
+              <li>Contabilidad B&aacute;sica para Empleados</li>
+              <li>Contabilidad por Iguala Fiscal y Financiera</li>
+            </ul>
+
+            <h4>Talleres &mdash; RRHH y N&oacute;mina</h4>
+            <ul>
+              <li>N&oacute;minas y Retenciones a Asalariados</li>
+              <li>Prestaciones Laborales y Derechos Adquiridos</li>
+              <li>Plataforma TSS</li>
+              <li>Plataforma SIRLA</li>
+            </ul>
+
+            <h4>Talleres &mdash; Fiscal y Tributario</h4>
+            <ul>
+              <li>Formatos 606, 607, 608</li>
+              <li>IR-17, ITBIS (ISR-IT1), IR-2 Anual</li>
+              <li>Retenciones fiscales y registros contables</li>
+            </ul>
+
+            <h4>Talleres &mdash; Finanzas y Contabilidad</h4>
+            <ul>
+              <li>Conciliaci&oacute;n Bancaria</li>
+              <li>Control de Inventarios</li>
+              <li>Cuentas por Cobrar</li>
+              <li>Egresos y Cuadres de Caja</li>
+              <li>Depreciaci&oacute;n de Activos Fijos</li>
+              <li>Elaboraci&oacute;n de Estados Financieros</li>
+              <li>Excel Avanzado para gesti&oacute;n empresarial</li>
+              <li>Planificaci&oacute;n Estrat&eacute;gica y POA</li>
+              <li>SISMAP Municipal</li>
+              <li>FODA institucional y planes de mejora</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CLIENTS
+     ============================================ -->
+<section class="clients section-padding" id="clientes">
+  <div class="container">
+    <div class="clients-header reveal">
+      <span class="section-label">Confianza corporativa</span>
+      <h2 class="section-title">Nuestros <span>Clientes</span></h2>
+      <div class="gold-line-center"></div>
+      <p class="section-subtitle" style="margin: 12px auto 0;">Empresas e instituciones que conf&iacute;an en nuestra experiencia y profesionalismo.</p>
+    </div>
+
+    <div class="clients-grid">
+      <div class="client-card reveal"><span>Constructora e Inversiones Charleston, SRL</span></div>
+      <div class="client-card reveal"><span>Oh La La Experience, SRL</span></div>
+      <div class="client-card reveal"><span>Matrix Cross Fitness, SRL</span></div>
+      <div class="client-card reveal"><span>Grupo ARCON SRL</span></div>
+      <div class="client-card reveal"><span>E&amp;V Express, SRL</span></div>
+      <div class="client-card reveal"><span>Soluciones Vicente Ram&iacute;rez SRL</span></div>
+      <div class="client-card reveal"><span>Denoagro SRL</span></div>
+      <div class="client-card reveal"><span>Auto Mayella, SRL</span></div>
+      <div class="client-card reveal"><span>Pintureca, SRL</span></div>
+      <div class="client-card reveal"><span>Fascar, SRL</span></div>
+      <div class="client-card reveal"><span>CS Todo Metal, SRL</span></div>
+      <div class="client-card reveal"><span>Embi Comercial SRL</span></div>
+      <div class="client-card reveal"><span>Mideca Importaciones SRL</span></div>
+      <div class="client-card reveal"><span>Agroqu&iacute;mica Las Palmas</span></div>
+      <div class="client-card reveal"><span>Elvin Auto Parts, SRL</span></div>
+      <div class="client-card reveal"><span>Ferramientas &amp; Mass, SRL</span></div>
+      <div class="client-card reveal"><span>Centro Regional Cardiovascular &mdash; CERECA</span></div>
+      <div class="client-card reveal"><span>Centro de Especialidades M&eacute;dicos Veganos &mdash; CEMEVE</span></div>
+      <div class="client-card reveal"><span>Ayuntamiento Municipal La Vega</span></div>
+      <div class="client-card reveal"><span>Cooperativa COOPEVEGA</span></div>
+      <div class="client-card reveal"><span>Centro M&eacute;dico Dominico Cubano</span></div>
+      <div class="client-card reveal"><span>Abrakadabra, SRL</span></div>
+      <div class="client-card reveal"><span>Barrick Pueblo Viejo</span></div>
+      <div class="client-card reveal"><span>Tienda Dicons</span></div>
+      <div class="client-card reveal"><span>Ferreter&iacute;a Serie 48, SRL</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section class="contact section-padding" id="contacto">
+  <div class="container">
+    <div class="contact-header reveal">
+      <span class="section-label">Comuniquese con nosotros</span>
+      <h2 class="section-title">Solicite una <span>Consulta</span></h2>
+      <div class="gold-line-center"></div>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info reveal-left">
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Direcci&oacute;n</h4>
+            <p>Av. Garc&iacute;a Godoy Esq. S&aacute;nchez<br>Edif. Emmanuel (1er. nivel)<br>La Vega, Rep&uacute;blica Dominicana</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <h4>Tel&eacute;fonos</h4>
+            <p>
+              <a href="tel:8095737738">(809) 573-7738</a><br>
+              <a href="tel:8098411970">809-841-1970</a><br>
+              <a href="tel:8498758734">849-875-8734</a><br>
+              <a href="tel:8098758751">809-875-8751</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <h4>Correo electr&oacute;nico</h4>
+            <p>
+              <a href="mailto:delgadohauditores@hotmail.com">delgadohauditores@hotmail.com</a><br>
+              <a href="mailto:dhfantina2@gmail.com">dhfantina2@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <div>
+            <h4>Web / Academy</h4>
+            <p><a href="https://www.delgadohauditores.com" target="_blank" rel="noopener">www.delgadohauditores.com</a></p>
+            <p><a href="https://dhacademy.edu.do" target="_blank" rel="noopener">dhacademy.edu.do</a></p>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="https://www.instagram.com/delgadohauditores" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:delgadohauditores@hotmail.com" class="social-link" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form reveal-right" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Su nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de su empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefono">Tel&eacute;fono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="(809) 000-0000">
+          </div>
+          <div class="form-group">
+            <label for="servicio">Servicio de inter&eacute;s</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Seleccione un servicio</option>
+              <option value="contabilidad">Contabilidad y Auditor&iacute;a</option>
+              <option value="sistemas">Sistemas Inform&aacute;ticos</option>
+              <option value="fiscal">Servicios Impositivos y Fiscales</option>
+              <option value="financiera">Consultor&iacute;a Financiera</option>
+              <option value="rrhh">Consultor&iacute;a en RRHH</option>
+              <option value="planificacion">Planificaci&oacute;n Estrat&eacute;gica</option>
+              <option value="academy">DH Academy - Capacitaci&oacute;n</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describa brevemente su consulta..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Solicitar consulta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-quote">
+      <blockquote>
+        &ldquo;El &eacute;xito es la suma de peque&ntilde;os esfuerzos repetidos d&iacute;a tras d&iacute;a.&rdquo;
+      </blockquote>
+      <cite>Robert Collier</cite>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <!-- INSERTAR: logo.png -->
+        <img src="logo.png" alt="DH Delgado Hern&aacute;ndez &amp; Asociados">
+        <p>Contadores, Auditores y Consultores Empresariales. M&aacute;s de 30 a&ntilde;os fortaleciendo el &eacute;xito empresarial en Rep&uacute;blica Dominicana.</p>
+      </div>
+      <div>
+        <h4 class="footer-title">Navegaci&oacute;n</h4>
+        <div class="footer-links">
+          <a href="#about">Nosotros</a>
+          <a href="#mision">Misi&oacute;n y Visi&oacute;n</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#clientes">Clientes</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">Servicios</h4>
+        <div class="footer-links">
+          <a href="#servicios">Contabilidad</a>
+          <a href="#servicios">Auditor&iacute;a</a>
+          <a href="#servicios">Fiscal</a>
+          <a href="#servicios">Consultor&iacute;a</a>
+          <a href="#servicios">RRHH</a>
+          <a href="#servicios">DH Academy</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">Contacto</h4>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Av. Garc&iacute;a Godoy Esq. S&aacute;nchez, Edif. Emmanuel, La Vega, RD</p>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:8095737738">(809) 573-7738</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:delgadohauditores@hotmail.com">delgadohauditores@hotmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <a href="https://www.delgadohauditores.com" target="_blank" rel="noopener">www.delgadohauditores.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <a href="https://www.instagram.com/delgadohauditores" target="_blank" rel="noopener">@delgadohauditores</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 DH Delgado Hern&aacute;ndez &amp; Asociados. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ---- Navbar scroll ---- */
+  const navbar = document.getElementById('navbar');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+
+  /* ---- Mobile menu ---- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  window.closeMobile = function() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  /* ---- Service accordion ---- */
+  window.toggleService = function(header) {
+    const item = header.parentElement;
+    const content = item.querySelector('.service-content');
+    const isActive = item.classList.contains('active');
+
+    // Close all
+    document.querySelectorAll('.service-item').forEach(function(el) {
+      el.classList.remove('active');
+      el.querySelector('.service-content').style.maxHeight = null;
+    });
+
+    // Open clicked if it was closed
+    if (!isActive) {
+      item.classList.add('active');
+      content.style.maxHeight = content.scrollHeight + 40 + 'px';
+    }
+  };
+
+  /* ---- Scroll reveal with Intersection Observer ---- */
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  /* ---- Smooth scroll for anchor links ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offset = 80;
+        const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: position, behavior: 'smooth' });
+      }
+    });
+  });
+
+  /* ---- Form handler -> WhatsApp redirect ---- */
+  window.handleSubmit = function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var nombre = form.querySelector('#nombre').value.trim();
+    var empresa = form.querySelector('#empresa').value.trim();
+    var telefono = form.querySelector('#telefono').value.trim();
+    var servicioSelect = form.querySelector('#servicio');
+    var servicioTexto = servicioSelect.options[servicioSelect.selectedIndex].text;
+    var mensaje = form.querySelector('#mensaje').value.trim();
+
+    var whatsappMsg = 'Hola, mi nombre es ' + nombre;
+    if (empresa) whatsappMsg += ' de la empresa ' + empresa;
+    whatsappMsg += '. Deseo solicitar informacion sobre el servicio de *' + servicioTexto + '*.';
+    if (telefono) whatsappMsg += ' Mi telefono de contacto es ' + telefono + '.';
+    if (mensaje) whatsappMsg += ' ' + mensaje;
+
+    var whatsappURL = 'https://wa.me/18498758750?text=' + encodeURIComponent(whatsappMsg);
+    window.open(whatsappURL, '_blank');
+  };
+
+  /* ---- Staggered reveal for grid items ---- */
+  var gridItems = document.querySelectorAll('.value-card, .team-member, .client-card');
+  gridItems.forEach(function(item, index) {
+    item.style.transitionDelay = (index % 8) * 0.06 + 's';
+  });
+
+})();
+</script>
+
+</body>
+</html>
