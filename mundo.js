@@ -59,9 +59,15 @@
     { img: 'k01-contabilidad', ancla: null,       svc:  0, mira:  0.55, calma: 0.16 },
     { img: 'k02-auditoria',    ancla: null,       svc:  1, mira: -0.55, calma: 0.16 },
     { img: 'k03-fiscal',       ancla: null,       svc:  2, mira:  0.55, calma: 0.16 },
-    { img: 'k04-consultoria',  ancla: null,       svc:  3, mira: -0.55, calma: 0.16 },
-    { img: 'k05-rrhh',         ancla: null,       svc:  4, mira:  0.55, calma: 0.16 },
-    { img: 'k06-academy',      ancla: null,       svc:  5, mira: -0.55, calma: 0.16 },
+    /* El mirador aparece dos veces a proposito. Es la unica sala
+       de la sede que mira hacia fuera, y planificacion estrategica
+       es la unica linea de la firma que hace lo mismo: dejar de
+       mirar el registro para mirar el horizonte. Vuelve al final,
+       en contacto, cerrando el recorrido donde empezo la idea.  */
+    { img: 'k09-mirador',      ancla: null,       svc:  3, mira: -0.55, calma: 0.16 },
+    { img: 'k04-consultoria',  ancla: null,       svc:  4, mira:  0.55, calma: 0.16 },
+    { img: 'k05-rrhh',         ancla: null,       svc:  5, mira: -0.55, calma: 0.16 },
+    { img: 'k06-academy',      ancla: null,       svc:  6, mira:  0.55, calma: 0.16 },
     { img: 'k07-cifras',       ancla: 'metodo',   svc: -1, mira:  0.25, calma: 0.46 },
     { img: 'k08-clientes',     ancla: 'clientes', svc: -1, mira:  0.00, calma: 0.56 },
     { img: 'k09-mirador',      ancla: 'contacto', svc: -1, mira:  0.00, calma: 0.18 }

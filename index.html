@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DH Delgado Hern&aacute;ndez &amp; Asociados | Contadores, Auditores y Consultores Empresariales &mdash; La Vega, Rep&uacute;blica Dominicana</title>
-<meta name="description" content="Firma dominicana de contadores, auditores y consultores empresariales desde 1994. Contabilidad, auditor&iacute;a, gesti&oacute;n fiscal, consultor&iacute;a, recursos humanos y formaci&oacute;n. La Vega, Rep&uacute;blica Dominicana.">
+<meta name="description" content="Firma dominicana de contadores, auditores y consultores empresariales desde 1994. Contabilidad, auditor&iacute;a, gesti&oacute;n fiscal, planificaci&oacute;n estrat&eacute;gica, consultor&iacute;a empresarial, recursos humanos y formaci&oacute;n. La Vega, Rep&uacute;blica Dominicana.">
 <!-- Esta linea decidia si la pagina existia o no para Google. En
      la propuesta iba en noindex a proposito, para que un diseno
      preliminar no compitiera con el sitio real. Ahora ES el sitio
@@ -21,7 +21,7 @@
 <meta property="og:locale" content="es_DO">
 <meta property="og:url" content="https://dhasociados.com.do/">
 <meta property="og:title" content="DH Delgado Hern&aacute;ndez &amp; Asociados | Contadores, Auditores y Consultores Empresariales">
-<meta property="og:description" content="Treinta a&ntilde;os cuidando los n&uacute;meros con los que empresas dominicanas deciden, invierten y crecen. La Vega, Rep&uacute;blica Dominicana.">
+<meta property="og:description" content="Del registro diario al plan estrat&eacute;gico: contabilidad, auditor&iacute;a, gesti&oacute;n fiscal, planificaci&oacute;n estrat&eacute;gica, consultor&iacute;a empresarial, recursos humanos y formaci&oacute;n. Desde 1994, en La Vega, Rep&uacute;blica Dominicana.">
 <meta property="og:image" content="https://dhasociados.com.do/compartir.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -2790,6 +2790,276 @@ body { background: transparent; }
   .ases__i:hover .ases__ph img { transform: none; }
 }
 
+/* ================================================================
+   LECTURA PRIMERO — LA COLUMNA SE CORRE, LA SEDE SE VE
+   ----------------------------------------------------------------
+   Dos problemas con una sola causa. El velo de lectura estaba
+   centrado, y un velo centrado tiene que repartirse por todo el
+   ancho de la ventana: no puede ser franco en ningun sitio sin
+   taparlo todo. Salia lo peor de las dos cosas —montantes,
+   reflejos y macetas de la sede cruzando por debajo de los
+   parrafos, y aun asi un lavado general que le quitaba el pulso
+   al recorrido.
+
+   La correccion es de geometria antes que de cosmetica. La
+   columna de lectura se corre a la izquierda y la lente se ancla
+   a ella con las MISMAS medidas, no con un porcentaje suelto: una
+   variable lleva el desplazamiento y la usan por igual el
+   contenedor, la lente de seccion y la lente del panel de
+   servicio. Van juntos por construccion, no por coincidencia.
+
+   Concentrada en menos ancho, la misma lente puede ser mucho mas
+   opaca justo donde hay que leer, y el costado derecho queda
+   franco —sin blanco y sin esmerilado— para que la camara se vea
+   avanzar. El fondo deja de estar DETRAS del texto y pasa a estar
+   AL LADO, que es donde se les ve mejor a los dos.
+   ================================================================ */
+
+:root {
+  /* Medidas de la columna. Cambiar una cifra aqui mueve el texto
+     y su lente a la vez; separarlos es exactamente el error que
+     este bloque viene a corregir.                              */
+  --col-ancho: 1160px;
+  --col-desvio: 0px;
+  --col-aire: clamp(20px, 4vw, 56px);
+  --panel: 31rem;
+
+  /* Sobre una lente que nunca llega a ser papel puro, los azules
+     medios de antes se quedaban cortos. Bajan un punto los dos:
+     es el margen que hace falta para que el texto secundario siga
+     por encima de 4.5:1 tambien donde la lente se adelgaza.     */
+  --ink-2: #2F4262;
+  --ink-3: #566C8E;
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    max-width: var(--col-ancho);
+    margin-left: var(--col-desvio);
+    margin-right: auto;
+  }
+}
+@media (min-width: 1200px) {
+  /* Un cuarto del aire sobrante, y nunca mas de 120px. Lo justo
+     para que se lea como una decision y no como un descuadre.  */
+  :root { --col-desvio: clamp(0px, calc((100vw - 1160px) * 0.24), 120px); }
+}
+
+/* ---- La lente de seccion sigue a la columna ------------------ */
+@media (min-width: 1200px) {
+  .sec:not(.terreno)::before,
+  .end::before,
+  .con-mundo .sec:not(.terreno)::before,
+  .con-mundo .end::before {
+    background: radial-gradient(64rem 62% at calc(var(--col-desvio) + var(--col-ancho) / 2) 50%,
+      rgba(255,255,255,.96) 0%,
+      rgba(255,255,255,.94) 44%,
+      rgba(255,255,255,.60) 76%,
+      rgba(255,255,255,0)  100%);
+    -webkit-mask-image: radial-gradient(64rem 62% at calc(var(--col-desvio) + var(--col-ancho) / 2) 50%, #000 0%, #000 62%, transparent 100%);
+    mask-image: radial-gradient(64rem 62% at calc(var(--col-desvio) + var(--col-ancho) / 2) 50%, #000 0%, #000 62%, transparent 100%);
+    -webkit-backdrop-filter: blur(22px) saturate(1.04);
+    backdrop-filter: blur(22px) saturate(1.04);
+  }
+  .sec--alt:not(.terreno)::before,
+  .con-mundo .sec--alt:not(.terreno)::before {
+    background: radial-gradient(64rem 62% at calc(var(--col-desvio) + var(--col-ancho) / 2) 50%,
+      rgba(238,244,251,.96) 0%,
+      rgba(238,244,251,.93) 44%,
+      rgba(238,244,251,.58) 76%,
+      rgba(238,244,251,0)  100%);
+  }
+}
+
+/* En ventana justa no hay costado que liberar: el texto ocupa
+   casi todo y la lente tiene que cubrir casi todo. Se queda
+   centrada, pero mas franca que antes.                          */
+@media (max-width: 1199px) {
+  .sec:not(.terreno)::before,
+  .end::before,
+  .con-mundo .sec:not(.terreno)::before,
+  .con-mundo .end::before {
+    background: radial-gradient(150% 60% at 50% 50%,
+      rgba(255,255,255,.96) 0%, rgba(255,255,255,.92) 54%, rgba(255,255,255,0) 96%);
+    -webkit-mask-image: radial-gradient(150% 60% at 50% 50%, #000 0%, #000 68%, transparent 98%);
+    mask-image: radial-gradient(150% 60% at 50% 50%, #000 0%, #000 68%, transparent 98%);
+    -webkit-backdrop-filter: blur(16px) saturate(1.04);
+    backdrop-filter: blur(16px) saturate(1.04);
+  }
+  .sec--alt:not(.terreno)::before,
+  .con-mundo .sec--alt:not(.terreno)::before {
+    background: radial-gradient(150% 60% at 50% 50%,
+      rgba(238,244,251,.96) 0%, rgba(238,244,251,.91) 54%, rgba(238,244,251,0) 96%);
+  }
+}
+
+/* El esmerilado a pantalla completa se paga en bateria antes que
+   en vista. En el telefono, mas blanco y menos filtro.          */
+@media (max-width: 900px) {
+  .sec:not(.terreno)::before,
+  .end::before,
+  .con-mundo .sec:not(.terreno)::before,
+  .con-mundo .end::before {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* ---- La lente del panel de servicio -------------------------
+   Con la columna corrida, una lente anclada a un porcentaje de la
+   seccion y un panel anclado a la columna dejan de coincidir, y
+   el texto se sale del claro justo por el lado donde se lee. La
+   lente pasa a calcularse desde las medidas que colocan el panel:
+   vaya donde vaya el panel, la lente va debajo.                */
+@media (min-width: 1024px) {
+  .svc__veil,
+  .con-mundo .svc__veil,
+  .svc--right .svc__veil,
+  .con-mundo .svc--right .svc__veil {
+    --lente-x: calc(var(--col-desvio) + var(--col-aire) + var(--panel) / 2);
+    background: radial-gradient(46rem 62% at var(--lente-x) 50%,
+      rgba(255,255,255,.97) 0%,
+      rgba(255,255,255,.94) 38%,
+      rgba(255,255,255,.52) 74%,
+      transparent 100%);
+    -webkit-mask-image: radial-gradient(46rem 62% at var(--lente-x) 50%, #000 0%, #000 56%, transparent 100%);
+    mask-image: radial-gradient(46rem 62% at var(--lente-x) 50%, #000 0%, #000 56%, transparent 100%);
+    -webkit-backdrop-filter: blur(20px) saturate(1.05);
+    backdrop-filter: blur(20px) saturate(1.05);
+  }
+  .svc--right .svc__veil,
+  .con-mundo .svc--right .svc__veil {
+    --lente-x: calc(var(--col-desvio) + var(--col-ancho) - var(--col-aire) - var(--panel) / 2);
+  }
+}
+
+/* En el telefono el panel se apoyaba directamente sobre el video:
+   sin velo y sin plancha, porque las dos se habian retirado a
+   proposito para que el metraje respirara. Respiraba de mas. La
+   franja central se aclara y se desenfoca lo justo; arriba y
+   abajo la escena sigue pasando limpia.                        */
+@media (max-width: 900px) {
+  .svc__veil,
+  .con-mundo .svc__veil,
+  .svc--right .svc__veil,
+  .con-mundo .svc--right .svc__veil {
+    background: linear-gradient(180deg,
+      rgba(255,255,255,.34) 0%,
+      rgba(255,255,255,.86) 22%,
+      rgba(255,255,255,.94) 50%,
+      rgba(255,255,255,.86) 78%,
+      rgba(255,255,255,.34) 100%);
+    -webkit-backdrop-filter: blur(7px) saturate(1.04);
+    backdrop-filter: blur(7px) saturate(1.04);
+  }
+}
+
+/* Los paneles de la derecha eran flex items y se encogian al ancho
+   de su propio texto: la misma linea de servicio se leia en una
+   medida distinta segun el lado en que cayera. Se les devuelve la
+   medida, y de paso la lente les cae exacta.                    */
+.svc--right .glass { width: 100%; }
+
+/* ---- El hero: un claro propio bajo el titular ---------------- */
+.hero__copy { position: relative; }
+.hero__copy::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -10% -14% -16% -12%;
+  pointer-events: none;
+  background: radial-gradient(closest-side,
+    rgba(255,255,255,.86) 0%, rgba(255,255,255,.60) 58%, rgba(255,255,255,0) 100%);
+  -webkit-mask-image: radial-gradient(closest-side, #000 0%, #000 46%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 0%, #000 46%, transparent 100%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+@media (max-width: 900px) {
+  .con-mundo .hero__haze {
+    background: linear-gradient(180deg,
+      rgba(255,255,255,0)   24%,
+      rgba(255,255,255,.60) 46%,
+      rgba(255,255,255,.93) 64%,
+      rgba(255,255,255,.97) 100%);
+  }
+}
+
+/* El capitulo oscuro hereda un esmerilado que queda detras de su
+   propio fondo opaco: no se ve y cuesta un filtro a pantalla
+   completa en cada fotograma. Se retira.                       */
+.terreno::before,
+.con-mundo .terreno::before {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* La sala se retira un punto mas donde hay parrafos largos que
+   leer. Sigue avanzando; deja de pedir la vista.                */
+#escena-luz::after { opacity: calc(var(--calma, 0) * .62); }
+
+/* ---- Los bloques que flotan sobre el metraje suben cuerpo ---- */
+.con-mundo .tile    { background: rgba(255,255,255,.86); }
+.tile,
+.con-mundo .tile {
+  -webkit-backdrop-filter: blur(9px) saturate(1.04);
+  backdrop-filter: blur(9px) saturate(1.04);
+}
+.con-mundo .crew__i { background: rgba(255,255,255,.90); }
+.con-mundo .fig     { background: rgba(255,255,255,.94); }
+.con-mundo .wall__i { background: rgba(255,255,255,.94); }
+.con-mundo .foot    { background: rgba(255,255,255,.90); }
+
+/* Los grises pequenos: los mismos textos, un punto mas oscuros.
+   Sobre papel ya cumplian; sobre una lente, no siempre.         */
+.marca figcaption { color: #47597A; }
+.rubro__nota,
+.ases__cred,
+.met__sub,
+.fase i           { color: #4E6285; }
+
+/* ---- Los logotipos, en su color -----------------------------
+   Estaban desaturados para que la cuadricula se leyera como una
+   sola pieza. La firma prefiere lo contrario, y tiene razon: el
+   logotipo de un cliente es suyo, no material de fondo. Vuelven a
+   su color, y lo que unifica la cuadricula pasa a ser lo que
+   siempre deberia haberlo hecho —la caja, el aire y la linea de
+   base compartida—, no un filtro encima.                        */
+.marca img { filter: none; opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .marca:hover img { filter: none; opacity: 1; transform: scale(1.04); }
+}
+
+/* ---- El panel de planificacion estrategica ------------------
+   Es el unico que lleva seis vinietas y un pie con nombre y
+   apellido, y es a proposito: es la linea que la firma quiere que
+   se lea entera, no de reojo.                                   */
+#planificacion { --panel: 34rem; }
+/* Dos vinietas y un pie mas que el resto piden dos escalones mas
+   de altura: si no, el panel sale de la meseta de su propia
+   lente justo por arriba y por abajo, que es donde estan el
+   titular y la firma de quien responde.                        */
+@media (min-width: 901px) { #planificacion { min-height: 122vh; } }
+.con-mundo .svc .glass--ancha,
+.svc .glass--ancha { max-width: 34rem; }
+.glass__pie {
+  margin-top: 22px;
+  font-size: .82rem;
+  line-height: 1.62;
+  color: var(--ink-3);
+  max-width: 42ch;
+}
+.svc .glass.on .glass__list div:nth-child(5) { transition-delay: 560ms; }
+.svc .glass.on .glass__list div:nth-child(6) { transition-delay: 630ms; }
+.svc .glass__pie {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 640ms var(--ease-expo), transform 760ms var(--ease-expo);
+}
+.svc .glass.on .glass__pie { opacity: 1; transform: none; transition-delay: 700ms; }
+@media (prefers-reduced-motion: reduce) {
+  .svc .glass__pie { opacity: 1; transform: none; }
+}
 </style>
 
 <script type="application/ld+json">
@@ -2799,7 +3069,7 @@ body { background: transparent; }
   "@id": "https://dhasociados.com.do/#firma",
   "name": "DH Delgado Hern\u00e1ndez & Asociados",
   "alternateName": "DH Asociados",
-  "description": "Firma dominicana de contadores, auditores y consultores empresariales desde 1994.",
+  "description": "Firma dominicana de contadores, auditores y consultores empresariales desde 1994. Contabilidad, auditor\u00eda, gesti\u00f3n fiscal, planificaci\u00f3n estrat\u00e9gica, consultor\u00eda empresarial, recursos humanos y formaci\u00f3n.",
   "url": "https://dhasociados.com.do/",
   "logo": "https://dhasociados.com.do/logo.png",
   "image": "https://dhasociados.com.do/compartir.jpg",
@@ -2826,6 +3096,7 @@ body { background: transparent; }
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidad" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auditor\u00eda" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gesti\u00f3n fiscal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planificaci\u00f3n estrat\u00e9gica" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultor\u00eda empresarial" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Recursos humanos" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DH Academy" } }
@@ -3364,8 +3635,8 @@ body { background: transparent; }
   </div>
 
   <div class="wrap hero__copy">
-    <h1 class="hero__title" id="h1">Tus n&uacute;meros en orden.<br>Tu mente <b>tranquila</b>.</h1>
-    <p class="hero__sub">Treinta a&ntilde;os cuidando los n&uacute;meros con los que empresas dominicanas como la tuya deciden, invierten y crecen.</p>
+    <h1 class="hero__title" id="h1">Del registro diario<br>al <b>plan estrat&eacute;gico</b>.</h1>
+    <p class="hero__sub">Contabilidad, auditor&iacute;a, gesti&oacute;n fiscal, planificaci&oacute;n estrat&eacute;gica, consultor&iacute;a empresarial, recursos humanos y formaci&oacute;n. Siete l&iacute;neas de servicio y una sola firma que responde por todas, desde 1994.</p>
     <div class="hero__acts">
       <a class="cta" href="#servicios">Ver servicios</a>
       <a class="cta cta--ghost" href="#contacto">Hablar con un socio</a>
@@ -3381,7 +3652,7 @@ body { background: transparent; }
   <div class="wrap">
     <div class="sec__head">
       <h2 class="sec__title rv rv--mask">Una firma que no entrega reportes:<br>entrega <em>criterio</em>.</h2>
-      <p class="sec__body rv rv--up">Nuestros servicios inician en 1994 con contabilidad por igualas, auditor&iacute;as financieras y asesor&iacute;a administrativa. Hoy el alcance es mayor y el compromiso es el mismo: informaci&oacute;n oportuna, verificable y &uacute;til para decidir.</p>
+      <p class="sec__body rv rv--up">Nuestros servicios inician en 1994 con contabilidad por igualas, auditor&iacute;as financieras y asesor&iacute;a administrativa. Hoy son siete l&iacute;neas &mdash;contabilidad, auditor&iacute;a, gesti&oacute;n fiscal, planificaci&oacute;n estrat&eacute;gica, consultor&iacute;a empresarial, recursos humanos y formaci&oacute;n&mdash; y el compromiso sigue siendo el mismo: informaci&oacute;n oportuna, verificable y &uacute;til para decidir, con &eacute;tica y confidencialidad en cada encargo.</p>
     </div>
 
     <div class="trio">
@@ -3400,8 +3671,8 @@ body { background: transparent; }
       <article class="tile rv rv--r">
         <canvas data-scene="growth" aria-hidden="true"></canvas>
         <span class="tile__arrow" aria-hidden="true">&#8599;</span>
-        <h3 class="tile__t">Decisiones con base</h3>
-        <p class="tile__d">Consultor&iacute;a que traduce la contabilidad en un plan con n&uacute;meros detr&aacute;s.</p>
+        <h3 class="tile__t">Rumbo, gente y m&eacute;todo</h3>
+        <p class="tile__d">Planificaci&oacute;n estrat&eacute;gica, consultor&iacute;a, recursos humanos y formaci&oacute;n: el plan, el equipo y el est&aacute;ndar para sostenerlo.</p>
       </article>
     </div>
   </div>
@@ -3471,19 +3742,48 @@ body { background: transparent; }
   </div>
 </section>
 
-<section class="svc svc--right">
+<!-- Planificacion estrategica deja de ser una vinieta dentro de
+     consultoria y pasa a ser lo que en realidad es en la firma: una
+     linea propia, con su coordinadora, su metodo y su entregable.
+     Va aqui, justo despues del bloque de cumplimiento, porque marca
+     el cambio de registro: hasta aqui la firma responde por lo que
+     ya paso; a partir de aqui, por lo que viene. -->
+<section class="svc svc--right" id="planificacion">
+  <div class="svc__vid" aria-hidden="true">
+    <video muted loop playsinline preload="none" poster="poster-academy.jpg" data-src="vid-academy.mp4"></video>
+  </div>
+  <div class="svc__veil"></div>
+  <div class="wrap svc__inner">
+    <div class="glass glass--ancha rv rv--r">
+      <p class="glass__k" aria-hidden="true"><b></b></p>
+      <h2 class="glass__t">Planificaci&oacute;n estrat&eacute;gica</h2>
+      <p class="glass__d">D&oacute;nde est&aacute; la empresa, a d&oacute;nde quiere llegar y qu&eacute; hay que hacer cada mes para llegar. Un proyecto con etapas, no una jornada de pizarra.</p>
+      <div class="glass__list">
+        <div>Misi&oacute;n, visi&oacute;n, valores y principios</div>
+        <div>An&aacute;lisis FODA y factores cr&iacute;ticos de &eacute;xito</div>
+        <div>Objetivos medibles y plan de acci&oacute;n</div>
+        <div>Indicadores de gesti&oacute;n (KPI)</div>
+        <div>Seguimiento peri&oacute;dico y correcci&oacute;n de desviaciones</div>
+        <div>Formulaci&oacute;n de proyectos de inversi&oacute;n p&uacute;blica</div>
+      </div>
+      <p class="glass__pie">Cada objetivo baja a iniciativa, actividad, responsable, fecha, indicador y meta. Coordina la l&iacute;nea la Lic. Fantina Hern&aacute;ndez, socia ejecutiva.</p>
+    </div>
+  </div>
+</section>
+
+<section class="svc">
   <div class="svc__vid" aria-hidden="true">
     <video muted loop playsinline preload="none" poster="poster-consultoria.jpg" data-src="vid-consultoria.mp4"></video>
   </div>
   <div class="svc__veil"></div>
   <div class="wrap svc__inner">
-    <div class="glass rv rv--r">
+    <div class="glass rv rv--l">
       <p class="glass__k" aria-hidden="true"><b></b></p>
       <h2 class="glass__t">Consultor&iacute;a empresarial</h2>
-      <p class="glass__d">Del dato al plan: proyecciones, estructura de costos y la decisi&oacute;n sustentada.</p>
+      <p class="glass__d">Del dato al argumento: lo que sostiene una decisi&oacute;n de compra, de inversi&oacute;n o de financiamiento.</p>
       <div class="glass__list">
-        <div>Planificaci&oacute;n estrat&eacute;gica</div>
         <div>Estructura de costos y precios</div>
+        <div>Punto de equilibrio por unidad de negocio</div>
         <div>Proyecciones y flujo de caja</div>
         <div>Preparaci&oacute;n para cr&eacute;dito bancario</div>
       </div>
@@ -3491,13 +3791,13 @@ body { background: transparent; }
   </div>
 </section>
 
-<section class="svc">
+<section class="svc svc--right">
   <div class="svc__vid" aria-hidden="true">
     <video muted loop playsinline preload="none" poster="poster-rrhh.jpg" data-src="vid-rrhh.mp4"></video>
   </div>
   <div class="svc__veil"></div>
   <div class="wrap svc__inner">
-    <div class="glass rv rv--l">
+    <div class="glass rv rv--r">
       <p class="glass__k" aria-hidden="true"><b></b></p>
       <h2 class="glass__t">Recursos humanos</h2>
       <p class="glass__d">La n&oacute;mina, el expediente y el cumplimiento laboral funcionando como un solo sistema.</p>
@@ -3511,13 +3811,13 @@ body { background: transparent; }
   </div>
 </section>
 
-<section class="svc svc--right">
+<section class="svc">
   <div class="svc__vid" aria-hidden="true">
     <video muted loop playsinline preload="none" poster="poster-academy.jpg" data-src="vid-academy.mp4"></video>
   </div>
   <div class="svc__veil"></div>
   <div class="wrap svc__inner">
-    <div class="glass rv rv--r">
+    <div class="glass rv rv--l">
       <p class="glass__k" aria-hidden="true"><b></b></p>
       <h2 class="glass__t">DH Academy</h2>
       <p class="glass__d">Formaci&oacute;n para que el equipo del cliente sostenga el est&aacute;ndar por su cuenta.</p>
@@ -4011,51 +4311,12 @@ body { background: transparent; }
       <div class="met__row">
         <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
           <span class="met__n">04</span>
-          <span class="met__t">Consultor&iacute;a empresarial<span class="met__sub">Del dato al plan, y del plan a la decisi&oacute;n</span></span>
+          <span class="met__t">Planificaci&oacute;n estrat&eacute;gica<span class="met__sub">De la identidad de la empresa al plan con responsable, fecha e indicador</span></span>
           <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
         <div class="met__panel"><div><div class="met__in">
-          <p class="met__lead">Aqu&iacute; la contabilidad deja de ser registro y pasa a ser argumento: lo que sostiene una decisi&oacute;n de compra, de inversi&oacute;n o de financiamiento. Y cuando la empresa necesita rumbo y no solo cifras, el mismo m&eacute;todo se aplica a la planificaci&oacute;n estrat&eacute;gica.</p>
-          <div class="fase"><h5>Consultor&iacute;a financiera</h5><i>Trabajo puntual o dentro del acompa&ntilde;amiento mensual</i></div>
-          <div class="pasos">
-            <div class="paso">
-              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-linea"></use></svg></div>
-              <span class="paso__n">01</span>
-              <h6>L&iacute;nea base de indicadores</h6>
-              <p>Una vez que existe informaci&oacute;n organizada se fija la l&iacute;nea base y se mide contra ella. Antes de eso, cualquier meta es decorativa.</p>
-            </div>
-            <div class="paso">
-              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-costos"></use></svg></div>
-              <span class="paso__n">02</span>
-              <h6>Estructura de costos y precios</h6>
-              <p>Costo real contra presupuestado, estructura porcentual y rentabilidad por l&iacute;nea, obra, tienda o unidad de negocio.</p>
-            </div>
-            <div class="paso">
-              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-equilibrio"></use></svg></div>
-              <span class="paso__n">03</span>
-              <h6>Punto de equilibrio por unidad</h6>
-              <p>Piso, punto medio y meta con margen objetivo por punto de venta, con evoluci&oacute;n contra el mes anterior.</p>
-            </div>
-            <div class="paso">
-              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-proy"></use></svg></div>
-              <span class="paso__n">04</span>
-              <h6>Proyecciones y flujo de caja</h6>
-              <p>Capital de trabajo, evaluaci&oacute;n de inversiones y proyecci&oacute;n del efectivo con los supuestos a la vista.</p>
-            </div>
-            <div class="paso">
-              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-banco2"></use></svg></div>
-              <span class="paso__n">05</span>
-              <h6>Estados preparados para cr&eacute;dito</h6>
-              <p>Cruzados contra Central de Riesgo, IR-2 y movimientos bancarios. Blindar significa dejarlos exactos y soportados, no falsearlos.</p>
-            </div>
-            <div class="paso">
-              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-comite"></use></svg></div>
-              <span class="paso__n">06</span>
-              <h6>Ante el analista y el comit&eacute;</h6>
-              <p>Se anticipan las preguntas del analista y se responden los cuestionarios del comit&eacute; de cr&eacute;dito con la evidencia en la mano.</p>
-            </div>
-          </div>
-          <div class="fase"><h5>Planificaci&oacute;n estrat&eacute;gica</h5><i>Proyecto con acta de entrega por etapa</i></div>
+          <p class="met__lead">Un plan estrat&eacute;gico no es un documento de intenciones: es el reparto del a&ntilde;o entre personas con nombre. La visi&oacute;n se traduce en objetivos verificables, cada objetivo baja a actividades con responsable y fecha, y cada actividad se mide contra un indicador. La firma acompa&ntilde;a el seguimiento, que es donde la mayor&iacute;a de los planes se caen.</p>
+          <div class="fase"><h5>Etapas del proyecto</h5><i>Proyecto con acta de entrega por etapa &middot; de seis a doce semanas</i></div>
           <div class="pasos">
             <div class="paso">
               <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-identidad"></use></svg></div>
@@ -4100,6 +4361,55 @@ body { background: transparent; }
       <div class="met__row">
         <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
           <span class="met__n">05</span>
+          <span class="met__t">Consultor&iacute;a empresarial<span class="met__sub">Del dato al argumento con el que se decide y se negocia</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">Aqu&iacute; la contabilidad deja de ser registro y pasa a ser argumento: lo que sostiene una decisi&oacute;n de compra, de inversi&oacute;n o de financiamiento, y lo que hay que defender delante de un analista de cr&eacute;dito. Cuando lo que hace falta es rumbo y no una cifra puntual, el encargo pasa a planificaci&oacute;n estrat&eacute;gica.</p>
+          <div class="fase"><h5>Consultor&iacute;a financiera</h5><i>Trabajo puntual o dentro del acompa&ntilde;amiento mensual</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-linea"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>L&iacute;nea base de indicadores</h6>
+              <p>Una vez que existe informaci&oacute;n organizada se fija la l&iacute;nea base y se mide contra ella. Antes de eso, cualquier meta es decorativa.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-costos"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Estructura de costos y precios</h6>
+              <p>Costo real contra presupuestado, estructura porcentual y rentabilidad por l&iacute;nea, obra, tienda o unidad de negocio.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-equilibrio"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Punto de equilibrio por unidad</h6>
+              <p>Piso, punto medio y meta con margen objetivo por punto de venta, con evoluci&oacute;n contra el mes anterior.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-proy"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Proyecciones y flujo de caja</h6>
+              <p>Capital de trabajo, evaluaci&oacute;n de inversiones y proyecci&oacute;n del efectivo con los supuestos a la vista.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-banco2"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Estados preparados para cr&eacute;dito</h6>
+              <p>Cruzados contra Central de Riesgo, IR-2 y movimientos bancarios. Blindar significa dejarlos exactos y soportados, no falsearlos.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-comite"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Ante el analista y el comit&eacute;</h6>
+              <p>Se anticipan las preguntas del analista y se responden los cuestionarios del comit&eacute; de cr&eacute;dito con la evidencia en la mano.</p>
+            </div>
+          </div>
+        </div></div></div>
+      </div>
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">06</span>
           <span class="met__t">Recursos humanos<span class="met__sub">Expediente, n&oacute;mina, TSS y contabilidad como un solo sistema</span></span>
           <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
@@ -4149,7 +4459,7 @@ body { background: transparent; }
       </div>
       <div class="met__row">
         <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
-          <span class="met__n">06</span>
+          <span class="met__n">07</span>
           <span class="met__t">DH Academy<span class="met__sub">Para que el equipo del cliente sostenga el est&aacute;ndar</span></span>
           <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
@@ -4305,9 +4615,9 @@ body { background: transparent; }
     </div>
     <div class="ases">
       <article class="ases__i rv rv--l">
-        <div class="ases__ph"><img src="nelson-rubio.jpg" alt="Nelson A. Rubio" loading="lazy" decoding="async"></div>
+        <div class="ases__ph"><img src="nelson-rubio.jpg" alt="Lic. Nelson A. Rubio" loading="lazy" decoding="async"></div>
         <div class="ases__tx">
-          <h3>Nelson A. Rubio</h3>
+          <h3>Lic. Nelson A. Rubio</h3>
           <p class="ases__role">Socio Director de Gesti&oacute;n Fiscal Empresarial</p>
           <p class="ases__cred">Contador P&uacute;blico Autorizado (CPA)</p>
           <p class="ases__d">Conduce el cumplimiento tributario de toda la cartera: conciliaci&oacute;n contable-fiscal, revisi&oacute;n de comprobantes y e-CF, planificaci&oacute;n del cierre anual y defensa t&eacute;cnica ante la DGII.</p>
@@ -4370,7 +4680,7 @@ body { background: transparent; }
 <section class="sec" id="clientes">
   <div class="wrap">
     <div class="sec__head">
-      <h2 class="sec__title rv rv--mask">Quienes nos <em>conf&iacute;an</em> sus n&uacute;meros</h2>
+      <h2 class="sec__title rv rv--mask">Quienes nos <em>conf&iacute;an</em> su gesti&oacute;n</h2>
       <p class="sec__body rv rv--up">Treinta y dos empresas e instituciones, agrupadas por su actividad econ&oacute;mica.</p>
       <p class="rubro__nota rv rv--up">El cat&aacute;logo de cuentas se dise&ntilde;a seg&uacute;n el giro: una constructora necesita contabilidad por obra, una cadena de tiendas necesita prorrateo de gastos compartidos por local y una cl&iacute;nica necesita separar servicios y almacenes. Por eso el mismo protocolo produce resultados distintos en cada sector.</p>
     </div>
@@ -4675,7 +4985,7 @@ body { background: transparent; }
 
 <section class="end" id="contacto">
   <div class="wrap end__inner">
-    <h2 class="end__t rv rv--mask">Conf&iacute;anos tus n&uacute;meros.<br>Qu&eacute;date con la <em>tranquilidad</em>.</h2>
+    <h2 class="end__t rv rv--mask">Conf&iacute;anos la gesti&oacute;n.<br>Qu&eacute;date con la <em>tranquilidad</em>.</h2>
 
     <div class="cont">
       <!-- El formulario compone el mensaje y lo abre en WhatsApp,
@@ -5698,9 +6008,10 @@ body { background: transparent; }
       { ancla: porSvc(0),             calma: 0.30, trama: 0.06, lupa: 0.00, f: fColumnas },
       { ancla: porSvc(1),             calma: 0.26, trama: 0.10, lupa: 1.00, f: fCuadricula },
       { ancla: porSvc(2),             calma: 0.30, trama: 0.16, lupa: 0.18, f: fCalendario },
-      { ancla: porSvc(3),             calma: 0.24, trama: 0.34, lupa: 0.00, f: fCurva },
-      { ancla: porSvc(4),             calma: 0.28, trama: 1.00, lupa: 0.00, f: fNucleos },
-      { ancla: porSvc(5),             calma: 0.30, trama: 0.72, lupa: 0.00, f: fAnillos },
+      { ancla: porSvc(3),             calma: 0.26, trama: 0.24, lupa: 0.00, f: fConvergencia },
+      { ancla: porSvc(4),             calma: 0.24, trama: 0.34, lupa: 0.00, f: fCurva },
+      { ancla: porSvc(5),             calma: 0.28, trama: 1.00, lupa: 0.00, f: fNucleos },
+      { ancla: porSvc(6),             calma: 0.30, trama: 0.72, lupa: 0.00, f: fAnillos },
       { ancla: porId('metodo'),       calma: 0.58, trama: 0.16, lupa: 0.00, f: fReticula },
       { ancla: porId('clientes'),     calma: 0.68, trama: 0.16, lupa: 0.00, f: fReticula },
       { ancla: porId('contacto'),     calma: 0.20, trama: 0.42, lupa: 0.00, f: fConvergencia }
