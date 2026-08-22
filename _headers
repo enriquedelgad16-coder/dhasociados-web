@@ -1,3 +1,10 @@
+# OJO ANTES DE TOCAR UNA FOTO: immutable quiere decir que el
+# navegador NO revalida. Si cambias el CONTENIDO de una imagen
+# tienes que cambiarle tambien el NOMBRE (-v2, -v3...) y la
+# referencia en index.html. Si no, quien ya estuvo en la pagina
+# seguira viendo la version vieja durante un ano y no hay forma
+# de avisarle. Paso el 22-08-2026 con los cuatro retratos.
+#
 # Netlify lee este fichero al desplegar. Es el equivalente de
 # vercel.json: el metraje y las fotografias no cambian nunca sin
 # cambiar de nombre, asi que se cachean un ano; el HTML no, para
