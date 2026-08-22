@@ -2200,6 +2200,596 @@ body { background: transparent; }
   .cont__form { grid-template-columns: 1fr; }
   .cta--wa { width: 100%; }
 }
+
+/* ================================================================
+   EL TERRENO — contexto de mercado
+   Capitulo oscuro entre el recorrido de servicios y el metodo.
+   Cambia el registro: aqui no hablamos de nosotros, hablamos del
+   terreno. Editorial y con fuente al pie; nada de tarjetas.
+   ================================================================ */
+.terreno {
+  background:
+    radial-gradient(1100px 620px at 10% -12%, rgba(11,77,162,.34), transparent 62%),
+    radial-gradient(860px 520px at 92% 6%, rgba(222,50,53,.14), transparent 60%),
+    linear-gradient(168deg, #071A33 0%, #0D2044 54%, #071A33 100%);
+  color: #C3D2E6;
+  overflow: hidden;
+}
+
+/* Renglones de libro mayor. Muy tenues: se perciben de reojo. */
+.terreno::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 100% 36px;
+  pointer-events: none;
+}
+
+.terreno > .wrap { position: relative; z-index: 1; }
+.terreno .sec__title { color: #FFFFFF; }
+.terreno .sec__title em { color: var(--red-light); }
+.terreno .sec__body { color: #A9BDD6; max-width: 62ch; }
+
+/* ---- La fotografia del tejido empresarial ---- */
+.terr__fig {
+  display: grid;
+  grid-template-columns: minmax(0, 330px) minmax(0, 1fr);
+  gap: clamp(34px, 5vw, 62px);
+  align-items: center;
+  padding-bottom: clamp(40px, 6vh, 64px);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+/* Cien unidades economicas, ochenta y una sin contabilidad. Es el
+   argumento entero del capitulo en una sola imagen. */
+.dotm {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 3px;
+  background: rgba(255,255,255,.03);
+}
+
+.dotm i {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: rgba(255,255,255,.14);
+  opacity: 0;
+  transform: scale(.4);
+  transition: opacity 460ms var(--ease-expo), transform 460ms var(--ease-expo);
+  transition-delay: calc(var(--d) * 9ms);
+}
+
+.dotm i.off { background: var(--red); }
+.rv.on .dotm i, .dotm.on i { opacity: 1; transform: scale(1); }
+
+.dotm__k {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 16px;
+  font-size: .76rem;
+  color: #93AAC7;
+}
+
+.dotm__k span { display: inline-flex; align-items: center; gap: 9px; }
+.dotm__k b { width: 11px; height: 11px; border-radius: 2px; flex-shrink: 0; }
+.dotm__k .kf { background: var(--red); }
+.dotm__k .kv { background: rgba(255,255,255,.32); }
+
+.terr__fig h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+  line-height: 1.24;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.terr__fig p { color: #A9BDD6; line-height: 1.8; max-width: 60ch; font-size: .96rem; }
+
+/* Las cifras son renglones de una tabla, no fichas. */
+.terr__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+.terr__stat { padding: 22px 24px 20px 0; border-bottom: 1px solid rgba(255,255,255,.07); }
+
+.terr__stat b {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  line-height: 1;
+  color: #FFFFFF;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.terr__stat span { display: block; margin-top: 10px; font-size: .87rem; line-height: 1.55; color: #93AAC7; max-width: 30ch; }
+.terr__stat em { display: block; margin-top: 8px; font-style: normal; font-size: .69rem; letter-spacing: .7px; text-transform: uppercase; color: #7C93B4; }
+
+/* ---- La carga de cumplimiento ---- */
+.terr__band { margin-top: clamp(40px, 6vh, 62px); padding-bottom: clamp(40px, 6vh, 60px); border-bottom: 1px solid rgba(255,255,255,.10); }
+
+.terr__band > h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.terr__band > p { color: #A9BDD6; max-width: 66ch; line-height: 1.8; font-size: .96rem; }
+
+.terr__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(262px, 1fr));
+  gap: 1px;
+  margin-top: 32px;
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.09);
+}
+
+.terr__fact {
+  background: #0A1A31;
+  padding: 24px 22px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  transition: background var(--dur-2) var(--ease-out);
+}
+
+.terr__fact:hover { background: #0E2340; }
+
+.terr__fact > svg {
+  width: 21px; height: 21px; flex-shrink: 0; margin-top: 2px;
+  stroke: var(--red-light); fill: none; stroke-width: 1.6;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+.terr__fact h4 { font-size: .93rem; font-weight: 600; color: #FFFFFF; margin-bottom: 7px; line-height: 1.4; }
+.terr__fact p { font-size: .855rem; line-height: 1.68; color: #8DA4C0; }
+
+/* ---- Respaldo internacional y posicionamiento ---- */
+.terr__close {
+  margin-top: clamp(40px, 6vh, 62px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  gap: clamp(34px, 5vw, 60px);
+  align-items: start;
+}
+
+.terr__close h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+.terr__close p { color: #A9BDD6; line-height: 1.82; max-width: 60ch; font-size: .96rem; }
+.terr__close p + p { margin-top: 14px; }
+
+/* La frase que posiciona a la firma. Un filete de 1px la marca
+   como cita sin convertirla en decoracion. */
+.terr__claim {
+  margin-top: 24px;
+  padding-left: 22px;
+  border-left: 1px solid var(--red);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.55;
+  color: #FFFFFF !important;
+  font-style: italic;
+  max-width: 46ch !important;
+}
+
+.cas { display: grid; gap: 1px; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.09); }
+.cas__i { background: #0A1A31; padding: 20px 22px; }
+.cas__i b { display: block; font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.8rem; line-height: 1; color: #FFFFFF; letter-spacing: -.02em; }
+.cas__i span { display: block; margin-top: 9px; font-size: .845rem; line-height: 1.6; color: #8DA4C0; }
+
+.terr__src {
+  margin-top: clamp(34px, 5vh, 50px);
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  font-size: .755rem;
+  line-height: 1.75;
+  color: #7C93B4;
+  max-width: 100ch;
+}
+
+.terr__src b { color: #8FA6C2; font-weight: 600; }
+
+/* ================================================================
+   EL METODO — riel de etapas, principios y limites
+   ================================================================ */
+
+/* Seis etapas sobre una linea que se traza al entrar: el metodo es
+   una secuencia, no seis fichas sueltas. */
+.arco {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: clamp(44px, 7vh, 72px);
+  position: relative;
+}
+
+.arco::before {
+  content: '';
+  position: absolute;
+  top: 21px; left: 8%; right: 8%;
+  height: 1px;
+  background: var(--line);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1000ms var(--ease-in-out) 140ms;
+}
+
+.arco.on::before { transform: scaleX(1); }
+
+.arco__s { text-align: center; padding: 0 12px; }
+
+.arco__d {
+  width: 42px; height: 42px; margin: 0 auto 17px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: grid; place-items: center;
+  position: relative; z-index: 1;
+  transition: border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
+}
+
+.arco__d svg {
+  width: 19px; height: 19px;
+  stroke: var(--blue); fill: none; stroke-width: 1.6;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: stroke var(--dur-2) var(--ease-out);
+}
+
+.arco__s h4 { font-size: .8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); margin-bottom: 9px; }
+.arco__s p { font-size: .825rem; line-height: 1.62; color: var(--ink-2); }
+
+@media (hover: hover) and (pointer: fine) {
+  .arco__s:hover .arco__d { border-color: var(--blue); background: var(--blue); transform: translateY(-2px); }
+  .arco__s:hover .arco__d svg { stroke: #FFFFFF; }
+}
+
+.arco__nota { margin: clamp(30px, 5vh, 44px) auto 0; max-width: 66ch; text-align: center; font-size: .96rem; line-height: 1.78; color: var(--ink-2); }
+
+/* ---- Principios ---- */
+.prin {
+  margin-top: clamp(48px, 8vh, 78px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.prin__i { background: var(--paper); padding: 28px 26px; transition: background var(--dur-2) var(--ease-out); }
+.prin__i:hover { background: #FBFCFE; }
+
+/* El primero sostiene todo el argumento: se le da peso cromatico
+   en lugar de repetirlo mas grande. */
+.prin__i.key { background: var(--blue-deep); }
+.prin__i.key:hover { background: #0B2242; }
+.prin__i.key h4 { color: #FFFFFF; }
+.prin__i.key p { color: #A9BDD6; }
+.prin__i.key .prin__n { color: var(--red-light); border-color: rgba(255,255,255,.22); }
+
+.prin__n { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: 1.7px; color: var(--blue); border-bottom: 1px solid var(--line); padding-bottom: 7px; margin-bottom: 15px; }
+.prin__i h4 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.06rem; color: var(--ink); line-height: 1.35; margin-bottom: 10px; }
+.prin__i p { font-size: .875rem; line-height: 1.72; color: var(--ink-2); }
+
+/* ---- Lo que no somos ---- */
+.limites { margin-top: clamp(40px, 6vh, 58px); padding: clamp(26px, 4vw, 38px); border: 1px solid var(--line); background: var(--paper); }
+.limites h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.35rem; color: var(--ink); margin-bottom: 8px; }
+.limites > p { font-size: .9rem; color: #5F7290; margin-bottom: 24px; }
+.limites ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px 38px; }
+.limites li { padding-left: 28px; position: relative; font-size: .875rem; line-height: 1.72; color: var(--ink-2); }
+.limites li::before { content: ''; position: absolute; left: 0; top: 9px; width: 14px; height: 1px; background: var(--red); }
+.limites li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+
+/* ================================================================
+   METODOLOGIA POR SERVICIO — acordeon
+   ================================================================ */
+.met { border-top: 1px solid var(--line); margin-top: clamp(30px, 5vh, 48px); }
+.met__row { border-bottom: 1px solid var(--line); }
+
+.met__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 24px);
+  padding: clamp(18px, 2.6vh, 26px) 4px;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  transition: background var(--dur-2) var(--ease-out);
+}
+
+.met__head:hover { background: var(--paper-2); }
+.met__head:active { transform: scale(.997); }
+
+.met__n { font-size: .7rem; font-weight: 700; letter-spacing: 1.6px; color: var(--ink-3); font-variant-numeric: tabular-nums; flex-shrink: 0; transition: color var(--dur-2) var(--ease-out); }
+.met__row.abierta .met__n { color: var(--red); }
+
+.met__t { flex: 1; font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(1.05rem, 2vw, 1.4rem); line-height: 1.25; color: var(--ink); }
+.met__sub { display: block; font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: .82rem; color: #5F7290; margin-top: 5px; line-height: 1.5; }
+
+.met__chev { width: 20px; height: 20px; flex-shrink: 0; stroke: var(--ink-3); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform 340ms var(--ease-expo), stroke var(--dur-2) var(--ease-out); }
+.met__row.abierta .met__chev { transform: rotate(180deg); stroke: var(--blue); }
+
+/* Se anima grid-template-rows en vez de max-height: no hace falta
+   medir nada, y el panel crece solo cuando por dentro se despliega
+   un procedimiento del catalogo. */
+.met__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 420ms var(--ease-expo); }
+.met__row.abierta .met__panel { grid-template-rows: 1fr; }
+.met__panel > div { overflow: hidden; }
+.met__in { padding: 4px 0 clamp(30px, 5vh, 44px); opacity: 0; transition: opacity 300ms var(--ease-out); }
+.met__row.abierta .met__in { opacity: 1; transition-delay: 120ms; }
+
+.met__lead { font-size: .95rem; line-height: 1.76; color: var(--ink-2); max-width: 72ch; margin-bottom: 26px; }
+
+.fase { margin: 30px 0 18px; }
+.fase h5 { display: flex; align-items: center; gap: 14px; font-family: 'DM Sans', sans-serif; font-size: .76rem; font-weight: 700; letter-spacing: 1.9px; text-transform: uppercase; color: var(--ink); line-height: 1.4; }
+.fase h5::after { content: ''; flex: 1 0 24px; height: 1px; background: var(--line); }
+.fase i { display: block; margin-top: 6px; font-style: normal; font-size: .73rem; letter-spacing: .3px; line-height: 1.5; color: #5F7290; }
+
+/* ---- Los pasos, cada uno con su miniatura ---- */
+.pasos { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+
+.paso { background: var(--paper); padding: 18px 18px 20px; transition: background var(--dur-2) var(--ease-out); }
+.paso:hover { background: #FCFDFF; }
+
+.paso__th {
+  height: 72px;
+  border-radius: 3px;
+  background: linear-gradient(160deg, #F5F8FD 0%, #E7EFF9 100%);
+  border: 1px solid var(--paper-3);
+  display: grid; place-items: center;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.paso__th svg { width: 124px; height: 58px; display: block; transition: transform 340ms var(--ease-expo); }
+
+/* Toda la familia de miniaturas comparte paleta. Va por variables
+   y no por clases porque <use> genera un shadow tree que los
+   selectores del documento no alcanzan; las propiedades
+   personalizadas si se heredan dentro. Rojo = lo que el
+   procedimiento detecta o corrige. */
+.pic { --ink-c: var(--blue); --ink-s: #9FB4CF; --acc: var(--red); --fill-s: #C6D5E8; --paper-c: #FFFFFF; display: block; }
+
+@media (hover: hover) and (pointer: fine) { .paso:hover .paso__th svg { transform: scale(1.05); } }
+
+.paso__n { font-size: .67rem; font-weight: 700; letter-spacing: 1.5px; color: var(--blue); display: block; margin-bottom: 6px; }
+.paso h6 { font-family: 'DM Sans', sans-serif; font-size: .885rem; font-weight: 600; color: var(--ink); line-height: 1.38; margin-bottom: 7px; }
+.paso p { font-size: .805rem; line-height: 1.62; color: #5A6B84; }
+
+/* Cadena de proceso: cuando el valor esta en el orden y no en el
+   detalle de cada paso. */
+.cadena { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 24px; padding: 16px 18px; background: var(--paper-2); border: 1px solid var(--paper-3); }
+.cadena span { font-size: .715rem; font-weight: 600; letter-spacing: 1.3px; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+.cadena i { font-style: normal; color: var(--red); font-size: .85rem; line-height: 1; }
+
+/* ---- Catalogo de procedimientos mensuales ----
+   Catorce filas que se abren en su sitio. Es la prueba concreta de
+   la profundidad del servicio: cada una dice que valida y que
+   detecta, no solo como se llama. */
+.proc { margin-top: 12px; border: 1px solid var(--line); }
+.proc__r { border-bottom: 1px solid var(--line); background: var(--paper); }
+.proc__r:last-child { border-bottom: 0; }
+
+.proc__h { width: 100%; display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: none; border: 0; text-align: left; cursor: pointer; font-family: inherit; transition: background var(--dur-2) var(--ease-out), transform 140ms var(--ease-out); }
+.proc__h:hover { background: var(--paper-2); }
+.proc__h:active { transform: scale(.996); }
+
+.proc__ic { width: 48px; height: 32px; flex-shrink: 0; display: grid; place-items: center; border-radius: 3px; background: var(--paper-3); transition: background var(--dur-2) var(--ease-out); }
+.proc__ic .pic { width: 42px; height: 27px; }
+
+.proc__r.abierta .proc__ic { background: var(--blue); }
+.proc__r.abierta .proc__ic .pic { --ink-c: #FFFFFF; --ink-s: rgba(255,255,255,.62); --fill-s: rgba(255,255,255,.40); --acc: #FF9092; --paper-c: transparent; }
+
+.proc__t { flex: 1; font-size: .885rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.proc__c { width: 15px; height: 15px; flex-shrink: 0; stroke: var(--ink-3); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 340ms var(--ease-expo), stroke var(--dur-2) var(--ease-out); }
+.proc__r.abierta .proc__c { transform: rotate(180deg); stroke: var(--blue); }
+
+.proc__b { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 340ms var(--ease-expo); }
+.proc__r.abierta .proc__b { grid-template-rows: 1fr; }
+.proc__b > div { overflow: hidden; }
+.proc__b p { padding: 0 16px 16px 78px; font-size: .835rem; line-height: 1.72; color: var(--ink-2); opacity: 0; transition: opacity var(--dur-2) var(--ease-out); }
+.proc__r.abierta .proc__b p { opacity: 1; transition-delay: 90ms; }
+
+.proc__nota { margin-top: 16px; font-size: .83rem; line-height: 1.72; color: #5F7290; max-width: 76ch; }
+
+/* ================================================================
+   ASESORES ESPECIALIZADOS
+   ================================================================ */
+.ases { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 34px); }
+
+.ases__i { background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; transition: border-color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out); }
+
+@media (hover: hover) and (pointer: fine) {
+  .ases__i:hover { border-color: #B9CBE4; transform: translateY(-3px); }
+  .ases__i:hover .ases__ph img { transform: scale(1.03); }
+}
+
+.ases__ph { aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper-3); position: relative; }
+.ases__ph img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; display: block; transition: transform 620ms var(--ease-expo); }
+
+/* Un velo desde abajo asienta el retrato en el bloque de texto y
+   evita el corte duro entre foto y ficha. */
+.ases__ph::after { content: ''; position: absolute; inset: auto 0 0 0; height: 34%; background: linear-gradient(to top, rgba(13,32,68,.20), transparent); pointer-events: none; }
+
+.ases__tx { padding: 22px 22px 26px; display: flex; flex-direction: column; flex: 1; }
+.ases__tx h3 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.16rem; color: var(--ink); line-height: 1.25; }
+.ases__role { margin-top: 7px; font-size: .755rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--red); line-height: 1.45; }
+.ases__cred { margin-top: 4px; font-size: .755rem; letter-spacing: .4px; color: #5F7290; }
+.ases__d { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: .865rem; line-height: 1.7; color: var(--ink-2); }
+
+/* ================================================================
+   CLIENTES POR TIPO DE NEGOCIO
+   ================================================================ */
+.filtros { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 clamp(34px, 5vh, 50px); }
+
+.chip {
+  font-family: inherit;
+  font-size: .785rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 9px 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out), transform 140ms var(--ease-out);
+}
+
+.chip:hover { border-color: var(--blue); color: var(--blue); }
+.chip:active { transform: scale(.97); }
+.chip b { font-size: .69rem; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; transition: color var(--dur-2) var(--ease-out); }
+.chip.on { background: var(--blue-deep); border-color: var(--blue-deep); color: #FFFFFF; }
+.chip.on b { color: rgba(255,255,255,.62); }
+
+.rubro { margin-bottom: clamp(34px, 5vh, 52px); }
+.rubro[hidden] { display: none; }
+
+.rubro__h { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+.rubro__h svg { width: 20px; height: 20px; flex-shrink: 0; stroke: var(--blue); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.rubro__h h3 { font-size: .77rem; font-weight: 700; letter-spacing: 2.2px; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+.rubro__h::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.rubro__h b { font-size: .71rem; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Filas centradas: un rubro de dos o de siete no llena la fila
+   entera, y dejar el sobrante colgando a la derecha se lee como un
+   hueco. Repartido a ambos lados se lee como una fila corta. */
+.marcas { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+.marca {
+  flex: 1 1 178px;
+  max-width: 258px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 20px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  min-height: 144px;
+  transition: background var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out);
+}
+
+.marca figure { display: flex; flex-direction: column; align-items: center; margin: 0; }
+.marca .lg { height: 58px; display: grid; place-items: center; margin-bottom: 12px; }
+
+/* Los logotipos vienen de origenes muy distintos: fondos blancos,
+   fotografias, colores que pelean entre si. Se desaturan en reposo
+   para que la cuadricula se lea como una sola pieza, y recuperan su
+   color al pasar el cursor. */
+.marca img { max-height: 58px; max-width: 150px; width: auto; height: auto; object-fit: contain; filter: grayscale(1) contrast(1.05); opacity: .74; transition: filter 340ms var(--ease-out), opacity 340ms var(--ease-out), transform 340ms var(--ease-out); }
+
+/* Sustituto para las marcas sin logotipo disponible: un monograma
+   compuesto, nunca un logo inventado. */
+.mono { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-family: 'Playfair Display', serif; font-size: .92rem; font-weight: 600; letter-spacing: .5px; color: var(--blue); background: var(--paper-2); transition: background var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out); }
+
+.marca figcaption { font-size: .75rem; line-height: 1.45; color: #5A6B84; transition: color var(--dur-2) var(--ease-out); }
+
+@media (hover: hover) and (pointer: fine) {
+  .marca:hover { background: #FBFCFE; border-color: #B9CBE4; }
+  .marca:hover img { filter: grayscale(0) contrast(1); opacity: 1; transform: scale(1.05); }
+  .marca:hover figcaption { color: var(--ink); }
+  .marca:hover .mono { background: var(--blue); color: #FFFFFF; border-color: var(--blue); }
+}
+
+.rubro__nota { margin-top: 8px; font-size: .84rem; line-height: 1.75; color: #5F7290; max-width: 76ch; }
+
+/* ================================================================
+   RESPONSIVO — secciones nuevas
+   ================================================================ */
+@media (max-width: 1080px) {
+  .ases { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 980px) {
+  .terr__fig { grid-template-columns: 1fr; }
+  .dotm { max-width: 340px; }
+  .terr__close { grid-template-columns: 1fr; }
+  .arco { grid-template-columns: repeat(3, 1fr); row-gap: 38px; }
+  .arco::before { display: none; }
+}
+
+@media (max-width: 760px) {
+  .terr__stat { padding: 18px 16px 16px 0; }
+  .arco { grid-template-columns: repeat(2, 1fr); }
+  .ases { grid-template-columns: 1fr; max-width: 420px; }
+  .pasos { grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); }
+  .paso { padding: 15px 14px 17px; }
+  .paso__th { height: 60px; }
+  .paso__th svg { width: 104px; height: 48px; }
+  .proc__h { padding: 11px 12px; gap: 11px; }
+  .proc__ic { width: 42px; height: 28px; }
+  .proc__ic .pic { width: 36px; height: 23px; }
+  .proc__t { font-size: .84rem; }
+  .proc__b p { padding: 0 12px 14px 67px; }
+  .chip { font-size: .755rem; padding: 9px 14px; min-height: 40px; }
+  .rubro__h { align-items: flex-start; gap: 12px; }
+  .rubro__h svg { margin-top: 1px; }
+  .rubro__h h3 { white-space: normal; letter-spacing: 1.6px; line-height: 1.45; }
+  .rubro__h::after { display: none; }
+  .rubro__h b { margin-left: auto; margin-top: 2px; }
+  .marcas { gap: 8px; }
+  .marca { flex-basis: 146px; }
+  .marca { min-height: 128px; padding: 16px 9px 14px; }
+  .marca .lg { height: 50px; }
+  .marca img { max-height: 50px; max-width: 124px; }
+  .mono { width: 40px; height: 40px; font-size: .84rem; }
+  .marca figcaption { font-size: .71rem; }
+  .met__t { font-size: 1.02rem; }
+  .cadena { padding: 14px 15px; gap: 8px; }
+  .cadena span { font-size: .67rem; }
+  .limites ul { gap: 18px 24px; }
+}
+
+@media (max-width: 520px) {
+  .arco { grid-template-columns: 1fr; row-gap: 28px; }
+  .arco__s { display: grid; grid-template-columns: 42px 1fr; column-gap: 15px; align-items: start; padding: 0; text-align: left; }
+  .arco__d { margin: 0; grid-row: 1 / 3; }
+  .arco__s h4 { grid-column: 2; }
+  .arco__s p { grid-column: 2; }
+  .pasos { grid-template-columns: 1fr; }
+  .paso__th { height: 78px; }
+  .marca { flex-basis: 42%; }
+}
+
+/* Menos movimiento: se conservan opacidades y color, se retiran
+   desplazamientos y escalas. */
+@media (prefers-reduced-motion: reduce) {
+  .dotm i { opacity: 1; transform: none; transition-delay: 0ms !important; }
+  .arco::before { transform: scaleX(1); transition: none; }
+  .marca img { transition: filter var(--dur-2) linear, opacity var(--dur-2) linear; }
+  .marca:hover img { transform: none; }
+  .paso:hover .paso__th svg { transform: none; }
+  .ases__i:hover { transform: none; }
+  .ases__i:hover .ases__ph img { transform: none; }
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -2264,6 +2854,485 @@ body { background: transparent; }
 
 
 
+<!-- ============================================
+     VOCABULARIO DE MINIATURAS DE PROCEDIMIENTO
+     Cada simbolo dibuja lo que hace un procedimiento, no un icono
+     generico. Se usan dos veces: como miniatura del paso (78x50) y
+     como distintivo de la fila del catalogo mensual.
+     El color entra por variables CSS heredadas (--ink, --ink2,
+     --fm, --acc), unica forma fiable de teñir el arbol de <use>.
+     Rojo = lo que el procedimiento detecta o corrige.
+     ============================================ -->
+<svg width="0" height="0" style="position:absolute;left:-9999px" aria-hidden="true" focusable="false">
+<defs>
+
+<!-- Diagnostico por areas -->
+<symbol id="pt-diag" viewBox="0 0 78 50">
+  <g fill="var(--fill-s)"><rect x="8" y="7" width="13" height="9" rx="1.5"/><rect x="40" y="7" width="13" height="9" rx="1.5"/><rect x="8" y="19" width="13" height="9" rx="1.5"/><rect x="24" y="19" width="13" height="9" rx="1.5"/><rect x="24" y="31" width="13" height="9" rx="1.5"/></g>
+  <g fill="var(--acc)"><rect x="24" y="7" width="13" height="9" rx="1.5"/><rect x="8" y="31" width="13" height="9" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"><circle cx="55" cy="20" r="9"/><path d="M61.5 26.5 70 35"/></g>
+</symbol>
+
+<!-- Levantamiento a fecha de corte -->
+<symbol id="pt-corte" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M8 18h62"/><path d="M14 15v6M22 15v6M30 15v6M52 15v6M60 15v6M68 15v6"/></g>
+  <g fill="none" stroke="var(--acc)" stroke-width="1.8" stroke-linecap="round"><path d="M42 8v22"/></g>
+  <path d="M42 6 46.5 11h-9z" fill="var(--acc)"/>
+  <rect x="10" y="33" width="26" height="9" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="42" y="33" width="26" height="9" rx="1.5" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+</symbol>
+
+<!-- Catalogo de cuentas -->
+<symbol id="pt-catalogo" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M39 15v5H20v4M39 20h20v4M56 31v4h-6"/></g>
+  <rect x="28" y="6" width="22" height="9" rx="1.5" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="10" y="24" width="21" height="8" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="48" y="24" width="21" height="8" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="34" y="35" width="18" height="8" rx="1.5" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M50 31v4h-6" fill="none" stroke="var(--ink-s)" stroke-width="1.4"/>
+</symbol>
+
+<!-- Parametrizacion y arranque del sistema -->
+<symbol id="pt-sistema" viewBox="0 0 78 50">
+  <rect x="8" y="7" width="44" height="29" rx="2.5" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M14 15h32M14 22h32M14 29h32"/></g>
+  <g fill="var(--ink-c)"><circle cx="36" cy="15" r="3"/><circle cx="22" cy="22" r="3"/><circle cx="40" cy="29" r="3"/></g>
+  <path d="M24 40h12M30 36v4" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="63" cy="31" r="9" fill="var(--ink-c)"/>
+  <path d="M58.5 31.5 62 35l6-7" fill="none" stroke="var(--paper-c)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Recepcion y organizacion de la documentacion -->
+<symbol id="pt-docs" viewBox="0 0 78 50">
+  <rect x="16" y="4" width="30" height="20" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="22" y="10" width="30" height="20" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-s)" stroke-width="1.4"/>
+  <rect x="28" y="16" width="30" height="20" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M33 23h20M33 29h13"/></g>
+  <path d="M8 36l6 8h50l6-8" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Registro de operaciones en el sistema -->
+<symbol id="pt-registro" viewBox="0 0 78 50">
+  <rect x="7" y="8" width="22" height="30" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M12 16h12M12 22h12M12 28h7"/></g>
+  <path d="M33 23h11" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M43 19.5 48 23l-5 3.5z" fill="var(--ink-c)"/>
+  <rect x="51" y="11" width="20" height="24" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="var(--fill-s)"><rect x="55" y="16" width="12" height="3" rx="1"/><rect x="55" y="22" width="12" height="3" rx="1"/><rect x="55" y="28" width="7" height="3" rx="1"/></g>
+  <path d="M56 39h10" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M61 35v4" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+</symbol>
+
+<!-- Auditoria de escritorio sobre los registros -->
+<symbol id="pt-audit" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M8 11h44M8 19h44M8 35h44"/></g>
+  <path d="M8 27h44" fill="none" stroke="var(--acc)" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="8" y="42" width="20" height="3" rx="1.5" fill="var(--fill-s)"/>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"><circle cx="53" cy="27" r="11"/><path d="M61 35 70 44"/></g>
+</symbol>
+
+<!-- Conciliacion bancaria: cuadre a cero -->
+<symbol id="pt-banco" viewBox="0 0 78 50">
+  <g fill="var(--fill-s)"><rect x="6" y="8" width="17" height="7" rx="1.5"/><rect x="6" y="21" width="17" height="7" rx="1.5"/><rect x="6" y="34" width="17" height="7" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5"><rect x="55" y="8" width="17" height="7" rx="1.5"/><rect x="55" y="21" width="17" height="7" rx="1.5"/><rect x="55" y="34" width="17" height="7" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M23 11.5h5M50 11.5h5M23 37.5h5M50 37.5h5"/></g>
+  <circle cx="39" cy="25" r="11" fill="none" stroke="var(--ink-c)" stroke-width="1.6"/>
+  <ellipse cx="39" cy="25" rx="3.4" ry="5.4" fill="none" stroke="var(--ink-c)" stroke-width="1.6"/>
+</symbol>
+
+<!-- Cruce de balanza contra estados financieros -->
+<symbol id="pt-cruce" viewBox="0 0 78 50">
+  <rect x="6" y="6" width="25" height="38" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="47" y="6" width="25" height="38" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M11 14h15M11 22h15M11 30h15M11 38h15M52 14h15M52 22h15M52 30h15M52 38h15"/></g>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2.5"><path d="M31 14h16M31 30h16M31 38h16"/></g>
+  <path d="M31 22h16" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M36 19l6 6M42 19l-6 6" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round"/>
+</symbol>
+
+<!-- Verificacion de cuadre: activo = pasivo + patrimonio -->
+<symbol id="pt-cuadre" viewBox="0 0 78 50">
+  <rect x="10" y="9" width="17" height="33" rx="1.5" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round"><path d="M33 21h11M33 29h11"/></g>
+  <rect x="50" y="9" width="17" height="15" rx="1.5" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="50" y="27" width="17" height="15" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+</symbol>
+
+<!-- Memorando de hallazgos con su asiento -->
+<symbol id="pt-hallazgo" viewBox="0 0 78 50">
+  <rect x="12" y="5" width="34" height="40" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M18 14h22M18 21h22M18 35h14"/></g>
+  <path d="M18 28h22" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M55 8v34" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M55 9h14l-3.5 5.5L69 20H55z" fill="var(--acc)"/>
+</symbol>
+
+<!-- Informe mensual y reunion con la gerencia -->
+<symbol id="pt-informe" viewBox="0 0 78 50">
+  <rect x="6" y="5" width="42" height="29" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="var(--fill-s)"><rect x="13" y="21" width="7" height="8" rx="1"/><rect x="23" y="15" width="7" height="14" rx="1"/></g>
+  <rect x="33" y="10" width="7" height="19" rx="1" fill="var(--ink-c)"/>
+  <path d="M27 34v6M20 40h14" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="62" cy="16" r="6" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M52 41a10 10 0 0 1 20 0" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+</symbol>
+
+<!-- Levantamiento de procesos -->
+<symbol id="pt-flujo" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M25 25h5v-9h4M30 25v9h4M50 16h4v9h5M50 34h4v-9"/></g>
+  <rect x="6" y="18" width="19" height="14" rx="2" fill="var(--fill-s)"/>
+  <rect x="34" y="8" width="16" height="13" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="34" y="29" width="16" height="13" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="59" y="18" width="13" height="14" rx="2" fill="var(--ink-c)"/>
+</symbol>
+
+<!-- Definicion de modulos -->
+<symbol id="pt-modulos" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3"><path d="M39 25 26 17M39 25l13-8M39 25l-13 8M39 25l13 8"/></g>
+  <rect x="7" y="7" width="24" height="14" rx="2" fill="var(--fill-s)"/>
+  <rect x="47" y="7" width="24" height="14" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="7" y="29" width="24" height="14" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="47" y="29" width="24" height="14" rx="2" fill="var(--fill-s)"/>
+  <circle cx="39" cy="25" r="5" fill="var(--ink-c)"/>
+</symbol>
+
+<!-- Carga inicial de saldos -->
+<symbol id="pt-carga" viewBox="0 0 78 50">
+  <path d="M6 25h17" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M22 21l6 4-6 4z" fill="var(--ink-c)"/>
+  <ellipse cx="52" cy="13" rx="18" ry="6" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M34 13v24c0 3.3 8 6 18 6s18-2.7 18-6V13" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M34 25c0 3.3 8 6 18 6s18-2.7 18-6" fill="none" stroke="var(--ink-s)" stroke-width="1.4"/>
+</symbol>
+
+<!-- Pruebas funcionales antes de operar -->
+<symbol id="pt-pruebas" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M30 11h40M30 25h40M30 39h32"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5"><rect x="8" y="5" width="13" height="13" rx="2"/><rect x="8" y="19" width="13" height="13" rx="2"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 11.5 13.5 14 18 8.5M11 25.5 13.5 28 18 22.5"/></g>
+  <rect x="8" y="33" width="13" height="13" rx="2" fill="none" stroke="var(--acc)" stroke-width="1.5"/>
+  <path d="M11.5 36.5 17.5 42.5M17.5 36.5 11.5 42.5" fill="none" stroke="var(--acc)" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+
+<!-- Capacitacion de los usuarios -->
+<symbol id="pt-capacita" viewBox="0 0 78 50">
+  <rect x="10" y="4" width="50" height="27" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M16 25l10-8 8 5 12-13" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 9h6v6" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="var(--fill-s)"><circle cx="22" cy="40" r="5"/><circle cx="39" cy="40" r="5"/><circle cx="56" cy="40" r="5"/></g>
+  <path d="M35 31v4" fill="none" stroke="var(--ink-s)" stroke-width="1.4"/>
+</symbol>
+
+<!-- Seguimiento y mejora continua -->
+<symbol id="pt-segui" viewBox="0 0 78 50">
+  <path d="M55 15a17 17 0 1 0 3 12" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M58 12v8h-8" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 25.5 37 30.5 47 20" fill="none" stroke="var(--acc)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Diagnostico de situacion fiscal -->
+<symbol id="pt-fiscal" viewBox="0 0 78 50">
+  <path d="M39 4l18 6v13c0 12-18 22-18 22S21 35 21 23V10z" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5" stroke-linejoin="round"/>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round"><circle cx="33" cy="18" r="3.2"/><circle cx="45" cy="28" r="3.2"/><path d="M46 15 32 31"/></g>
+</symbol>
+
+<!-- Organizacion de la documentacion fiscal -->
+<symbol id="pt-archivo" viewBox="0 0 78 50">
+  <g fill="var(--fill-s)"><rect x="12" y="5" width="17" height="6" rx="1.5"/><rect x="32" y="5" width="17" height="6" rx="1.5"/></g>
+  <rect x="8" y="11" width="52" height="32" rx="2.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M16 22h36M16 30h36M16 37h22"/></g>
+  <path d="M64 20v20" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+</symbol>
+
+<!-- Revision de comprobantes fiscales y e-CF -->
+<symbol id="pt-ncf" viewBox="0 0 78 50">
+  <path d="M14 4h32v34l-4 4-4-4-4 4-4-4-4 4-4-4-4 4-4-4z" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5" stroke-linejoin="round"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M20 13h20M20 20h20M20 27h12"/></g>
+  <circle cx="58" cy="32" r="10" fill="var(--ink-c)"/>
+  <path d="M53 32.5 57 36l7-8" fill="none" stroke="var(--paper-c)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Conciliacion 606 y 607 contra la contabilidad -->
+<symbol id="pt-606" viewBox="0 0 78 50">
+  <rect x="5" y="9" width="26" height="31" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="47" y="9" width="26" height="31" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="var(--fill-s)"><rect x="5" y="9" width="26" height="7" rx="1.5"/><rect x="47" y="9" width="26" height="7" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M10 23h16M10 31h16M52 23h16M52 31h16"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round"><path d="M34 21h10M34 28h10"/></g>
+</symbol>
+
+<!-- Determinacion y presentacion de declaraciones -->
+<symbol id="pt-declara" viewBox="0 0 78 50">
+  <rect x="9" y="5" width="33" height="40" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M15 14h21M15 22h21M15 30h13"/></g>
+  <rect x="15" y="36" width="12" height="4" rx="1" fill="var(--fill-s)"/>
+  <path d="M57 42V16" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M57 12l7 8H50z" fill="var(--ink-c)"/>
+  <path d="M48 45h18" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+</symbol>
+
+<!-- Atencion a requerimientos -->
+<symbol id="pt-req" viewBox="0 0 78 50">
+  <rect x="7" y="10" width="41" height="29" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M7 13l20.5 15L48 13" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M56 20a11 11 0 1 1-3 12" fill="none" stroke="var(--ink-s)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M53 17v7h7" fill="none" stroke="var(--ink-s)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Linea base de indicadores -->
+<symbol id="pt-linea" viewBox="0 0 78 50">
+  <path d="M8 6v38h62" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M12 32h56" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-dasharray="3 3" stroke-linecap="round"/>
+  <path d="M12 36 24 30 36 26 48 19 60 13 70 9" fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="var(--ink-c)"><circle cx="24" cy="30" r="2.6"/><circle cx="48" cy="19" r="2.6"/><circle cx="70" cy="9" r="2.6"/></g>
+</symbol>
+
+<!-- Estructura de costos y precios -->
+<symbol id="pt-costos" viewBox="0 0 78 50">
+  <g stroke="var(--paper-c)" stroke-width="1.5">
+    <rect x="8" y="11" width="28" height="12" fill="var(--fill-s)"/>
+    <rect x="36" y="11" width="20" height="12" fill="var(--ink-c)"/>
+    <rect x="56" y="11" width="14" height="12" fill="var(--acc)"/>
+    <rect x="8" y="30" width="21" height="12" fill="var(--fill-s)"/>
+    <rect x="29" y="30" width="26" height="12" fill="var(--ink-c)"/>
+    <rect x="55" y="30" width="15" height="12" fill="var(--fill-s)"/>
+  </g>
+  <path d="M8 26h62" fill="none" stroke="var(--ink-s)" stroke-width="1" stroke-dasharray="2 2"/>
+</symbol>
+
+<!-- Punto de equilibrio por unidad -->
+<symbol id="pt-equilibrio" viewBox="0 0 78 50">
+  <path d="M9 5v39h63" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M13 41 70 9" fill="none" stroke="var(--ink-c)" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M13 25 70 18" fill="none" stroke="var(--ink-s)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M35 44V27" fill="none" stroke="var(--acc)" stroke-width="1.3" stroke-dasharray="3 3"/>
+  <circle cx="35" cy="27" r="4.5" fill="var(--acc)"/>
+</symbol>
+
+<!-- Proyecciones y flujo de caja -->
+<symbol id="pt-proy" viewBox="0 0 78 50">
+  <path d="M8 5v39h64" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M12 36 22 29 32 33 42 22" fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 22 54 16 68 8" fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-dasharray="4 3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 44V16" fill="none" stroke="var(--acc)" stroke-width="1.2" stroke-dasharray="2.5 3"/>
+  <circle cx="42" cy="22" r="3.2" fill="var(--ink-c)"/>
+</symbol>
+
+<!-- Estados financieros para el banco -->
+<symbol id="pt-banco2" viewBox="0 0 78 50">
+  <path d="M6 20 29 7l23 13z" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.5" stroke-linejoin="round"/>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"><path d="M14 24v14M24 24v14M34 24v14M44 24v14M8 42h42"/></g>
+  <rect x="56" y="14" width="16" height="24" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M60 21h8M60 27h8M60 33h5"/></g>
+</symbol>
+
+<!-- Comite de credito -->
+<symbol id="pt-comite" viewBox="0 0 78 50">
+  <ellipse cx="39" cy="35" rx="27" ry="9" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5"><circle cx="15" cy="18" r="5.5"/><circle cx="39" cy="12" r="5.5"/><circle cx="63" cy="18" r="5.5"/></g>
+  <rect x="32" y="29" width="14" height="10" rx="1" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.4"/>
+  <path d="M35 33h8M35 36h5" fill="none" stroke="var(--ink-s)" stroke-width="1.2" stroke-linecap="round"/>
+</symbol>
+
+<!-- Diagnostico del area de gestion humana -->
+<symbol id="pt-rrhh" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M39 17v6H16v6M39 23h23v6M39 23v6"/></g>
+  <rect x="28" y="6" width="22" height="11" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <circle cx="39" cy="11.5" r="3" fill="var(--ink-c)"/>
+  <rect x="6" y="29" width="20" height="13" rx="2" fill="var(--fill-s)"/>
+  <rect x="29" y="29" width="20" height="13" rx="2" fill="var(--fill-s)"/>
+  <rect x="52" y="29" width="20" height="13" rx="2" fill="var(--fill-s)"/>
+</symbol>
+
+<!-- Politicas y procedimientos -->
+<symbol id="pt-politicas" viewBox="0 0 78 50">
+  <rect x="12" y="4" width="46" height="41" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M21 4v41" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M28 14h22M28 22h22M28 30h14"/></g>
+  <path d="M44 4h12v18l-6-5-6 5z" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.4" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Expedientes de empleados -->
+<symbol id="pt-exped" viewBox="0 0 78 50">
+  <rect x="10" y="7" width="42" height="30" rx="2" fill="var(--fill-s)"/>
+  <rect x="18" y="14" width="46" height="30" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <circle cx="31" cy="25" r="4.5" fill="none" stroke="var(--ink-c)" stroke-width="1.4"/>
+  <path d="M24 38a7 7 0 0 1 14 0" fill="none" stroke="var(--ink-c)" stroke-width="1.4" stroke-linecap="round"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M44 24h14M44 30h14M44 36h9"/></g>
+</symbol>
+
+<!-- Nomina y su auditoria mensual -->
+<symbol id="pt-nomina" viewBox="0 0 78 50">
+  <rect x="7" y="5" width="38" height="40" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="7" y="5" width="38" height="8" rx="1.5" fill="var(--fill-s)"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M12 20h13M32 20h8M12 27h13M32 27h8M12 34h13M32 34h8"/></g>
+  <path d="M12 40h28" fill="none" stroke="var(--ink-c)" stroke-width="1.4" stroke-linecap="round"/>
+  <circle cx="60" cy="30" r="11" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M60 24v12M56 27h6.5a2.6 2.6 0 0 1 0 5.2H57a2.6 2.6 0 0 0 0 5.2H64" fill="none" stroke="var(--ink-c)" stroke-width="1.4" stroke-linecap="round"/>
+</symbol>
+
+<!-- Amarre nomina, TSS, SIRLA y contabilidad -->
+<symbol id="pt-amarre" viewBox="0 0 78 50">
+  <g fill="var(--fill-s)"><rect x="5" y="5" width="21" height="10" rx="2"/><rect x="5" y="20" width="21" height="10" rx="2"/><rect x="5" y="35" width="21" height="10" rx="2"/></g>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M26 10h9l6 13M26 25h13M26 40h9l6-13"/></g>
+  <circle cx="57" cy="25" r="13" fill="none" stroke="var(--ink-c)" stroke-width="1.6"/>
+  <path d="M51 25.5 55.5 30 64 20" fill="none" stroke="var(--ink-c)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Gestion del desempeno -->
+<symbol id="pt-desemp" viewBox="0 0 78 50">
+  <path d="M12 40a27 27 0 0 1 54 0" fill="none" stroke="var(--ink-s)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M48 40a9 9 0 0 0-18 0" fill="none" stroke="var(--fill-s)" stroke-width="2.4"/>
+  <path d="M55 21a27 27 0 0 1 11 19" fill="none" stroke="var(--ink-c)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M39 40 55 22" fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round"/>
+  <circle cx="39" cy="40" r="3.6" fill="var(--ink-c)"/>
+</symbol>
+
+<!-- Analisis estrategico FODA -->
+<symbol id="pt-foda" viewBox="0 0 78 50">
+  <rect x="8" y="5" width="30" height="18" rx="2" fill="var(--fill-s)"/>
+  <rect x="40" y="5" width="30" height="18" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="8" y="27" width="30" height="18" rx="2" fill="none" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="40" y="27" width="30" height="18" rx="2" fill="var(--fill-s)"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M46 12h18M46 17h11M14 34h18M14 39h11"/></g>
+</symbol>
+
+<!-- Identidad estrategica y rumbo -->
+<symbol id="pt-identidad" viewBox="0 0 78 50">
+  <circle cx="39" cy="25" r="19" fill="none" stroke="var(--ink-c)" stroke-width="1.6"/>
+  <path d="M49 15 35 21l-6 14 14-6z" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.4" stroke-linejoin="round"/>
+  <circle cx="39" cy="25" r="2.6" fill="var(--acc)"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M39 3v4M39 43v4M17 25h4M57 25h4"/></g>
+</symbol>
+
+<!-- Objetivos concretos y medibles -->
+<symbol id="pt-objetivo" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5"><circle cx="33" cy="27" r="17"/><circle cx="33" cy="27" r="10.5"/></g>
+  <circle cx="33" cy="27" r="4" fill="var(--acc)"/>
+  <path d="M33 27 68 6" fill="none" stroke="var(--ink-c)" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M60 5h9v9" fill="none" stroke="var(--ink-c)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Plan de accion con responsable y fecha -->
+<symbol id="pt-plan" viewBox="0 0 78 50">
+  <path d="M7 4v42" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+  <g><rect x="12" y="7" width="34" height="7" rx="2" fill="var(--fill-s)"/><rect x="24" y="18" width="38" height="7" rx="2" fill="var(--ink-c)"/><rect x="16" y="29" width="26" height="7" rx="2" fill="var(--fill-s)"/><rect x="34" y="40" width="30" height="7" rx="2" fill="var(--ink-c)"/></g>
+</symbol>
+
+<!-- Indicadores de gestion -->
+<symbol id="pt-kpi" viewBox="0 0 78 50">
+  <rect x="7" y="6" width="60" height="38" rx="2.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="13" y="12" width="20" height="9" rx="1.5" fill="var(--ink-c)"/>
+  <rect x="37" y="14" width="14" height="5" rx="1.5" fill="var(--fill-s)"/>
+  <path d="M13 38 25 31 37 34 49 25 61 18" fill="none" stroke="var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Materiales, casos y plantillas -->
+<symbol id="pt-material" viewBox="0 0 78 50">
+  <rect x="6" y="9" width="24" height="32" rx="2" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <path d="M13 9v32" fill="none" stroke="var(--ink-c)" stroke-width="1.4"/>
+  <rect x="36" y="5" width="34" height="40" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.2"><path d="M36 17h34M36 29h34M47 5v40M59 5v40"/></g>
+</symbol>
+
+<!-- Evaluacion del aprendizaje -->
+<symbol id="pt-evalua" viewBox="0 0 78 50">
+  <rect x="12" y="4" width="34" height="41" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M18 13h22M18 20h22"/></g>
+  <path d="M19 32 26 39 42 23" fill="none" stroke="var(--ink-c)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M60 8l3.2 6.5 7.2 1-5.2 5.1 1.2 7.1-6.4-3.4-6.4 3.4 1.2-7.1-5.2-5.1 7.2-1z" fill="var(--fill-s)"/>
+</symbol>
+
+<!-- Aplicacion medida en la empresa -->
+<symbol id="pt-aplica" viewBox="0 0 78 50">
+  <rect x="6" y="24" width="20" height="18" rx="2" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.4"/>
+  <path d="M12 24v18" fill="none" stroke="var(--ink-c)" stroke-width="1.3"/>
+  <path d="M28 30c8 4 12 0 14-6" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M38 24h6v6" fill="none" stroke="var(--ink-c)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g><rect x="48" y="30" width="7" height="13" rx="1.5" fill="var(--fill-s)"/><rect x="58" y="22" width="7" height="21" rx="1.5" fill="var(--ink-c)"/><rect x="68" y="13" width="7" height="30" rx="1.5" fill="var(--acc)"/></g>
+</symbol>
+
+<!-- Auditoria de cheques y transferencias -->
+<symbol id="pt-cheques" viewBox="0 0 78 50">
+  <rect x="6" y="10" width="48" height="28" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M12 19h20M12 25h14"/></g>
+  <rect x="36" y="16" width="14" height="7" rx="1.5" fill="var(--fill-s)"/>
+  <path d="M12 33c4-5 6 2 10-2s6 3 10-1" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M58 24h12" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M66 20l6 4-6 4z" fill="var(--ink-c)"/>
+</symbol>
+
+<!-- Auditoria de depositos -->
+<symbol id="pt-deposito" viewBox="0 0 78 50">
+  <rect x="8" y="6" width="26" height="20" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M13 13h16M13 19h10"/></g>
+  <path d="M21 29v9" fill="none" stroke="var(--ink-c)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M21 42l-5-6h10z" fill="var(--ink-c)"/>
+  <path d="M42 21 58 12l16 9z" fill="var(--fill-s)" stroke="var(--ink-c)" stroke-width="1.4" stroke-linejoin="round"/>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.4" stroke-linecap="round"><path d="M48 24v11M58 24v11M68 24v11M44 39h28"/></g>
+</symbol>
+
+<!-- Cruce de cuentas por pagar -->
+<symbol id="pt-cxp" viewBox="0 0 78 50">
+  <g fill="var(--fill-s)"><rect x="6" y="8" width="20" height="8" rx="1.5"/><rect x="6" y="21" width="20" height="8" rx="1.5"/><rect x="6" y="34" width="20" height="8" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5"><rect x="52" y="8" width="20" height="8" rx="1.5"/><rect x="52" y="21" width="20" height="8" rx="1.5"/><rect x="52" y="34" width="20" height="8" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-dasharray="2.5 2.5"><path d="M26 12h26M26 38h26"/></g>
+  <path d="M26 25h26" fill="none" stroke="var(--acc)" stroke-width="1.6"/>
+  <circle cx="39" cy="25" r="5" fill="var(--acc)"/>
+  <path d="M39 22v3.5M39 28.2v.2" fill="none" stroke="var(--paper-c)" stroke-width="1.6" stroke-linecap="round"/>
+</symbol>
+
+<!-- Antiguedad de cuentas por cobrar -->
+<symbol id="pt-cxc" viewBox="0 0 78 50">
+  <path d="M8 6v38h62" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="14" y="14" width="11" height="27" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="29" y="21" width="11" height="20" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="44" y="27" width="11" height="14" rx="1.5" fill="var(--ink-c)"/>
+  <rect x="59" y="31" width="11" height="10" rx="1.5" fill="var(--acc)"/>
+</symbol>
+
+<!-- Conteo y valuacion de inventario -->
+<symbol id="pt-inv" viewBox="0 0 78 50">
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.5"><rect x="7" y="26" width="17" height="16" rx="1.5"/><rect x="26" y="26" width="17" height="16" rx="1.5"/><rect x="16" y="9" width="17" height="16" rx="1.5"/></g>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M12 26v-3M31 26v-3M21 9V6"/></g>
+  <rect x="50" y="8" width="22" height="30" rx="2" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <rect x="57" y="5" width="8" height="6" rx="1.5" fill="var(--fill-s)"/>
+  <path d="M55 20l3 3 6-7" fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M55 30l3 3 6-7" fill="none" stroke="var(--acc)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Analisis de variacion de gastos -->
+<symbol id="pt-varia" viewBox="0 0 78 50">
+  <path d="M8 44h62" fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="13" y="24" width="12" height="18" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="33" y="17" width="12" height="25" rx="1.5" fill="var(--fill-s)"/>
+  <rect x="53" y="9" width="12" height="33" rx="1.5" fill="var(--fill-s)"/>
+  <path d="M25 22 33 15" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M45 14 53 7" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M35 12h-6v6M55 4h-6v6" fill="none" stroke="var(--acc)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Prorrateo de gastos compartidos -->
+<symbol id="pt-prorra" viewBox="0 0 78 50">
+  <rect x="27" y="4" width="24" height="11" rx="2" fill="var(--ink-c)"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.4" stroke-linecap="round"><path d="M39 15v9H14v6M39 24h25v6M39 24v6"/></g>
+  <g fill="var(--fill-s)"><rect x="4" y="30" width="20" height="13" rx="2"/><rect x="29" y="30" width="20" height="13" rx="2"/><rect x="54" y="30" width="20" height="13" rx="2"/></g>
+  <g fill="none" stroke="var(--ink-c)" stroke-width="1.4" stroke-linecap="round"><path d="M9 37h10M34 37h10M59 37h10"/></g>
+</symbol>
+
+<!-- Inspeccion profunda final -->
+<symbol id="pt-inspec" viewBox="0 0 78 50">
+  <rect x="8" y="6" width="34" height="38" rx="1.5" fill="var(--paper-c)" stroke="var(--ink-c)" stroke-width="1.5"/>
+  <g fill="none" stroke="var(--ink-s)" stroke-width="1.3" stroke-linecap="round"><path d="M14 15h22M14 22h22M14 29h22M14 36h13"/></g>
+  <circle cx="53" cy="24" r="14" fill="none" stroke="var(--ink-c)" stroke-width="1.6"/>
+  <path d="M63 34 71 42" fill="none" stroke="var(--ink-c)" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M47 24.5 51.5 29 60 19" fill="none" stroke="var(--acc)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+</defs>
+</svg>
+
+
 <nav class="nav" id="nav">
   <div class="wrap nav__row">
     <div class="nav__brand"><img src="logo-mark.png" alt="DH Delgado Hern&aacute;ndez &amp; Asociados"></div>
@@ -2273,6 +3342,7 @@ body { background: transparent; }
         <a href="#socios">Socios</a>
         <a href="#clientes">Clientes</a>
       <a href="#filosofia">Filosof&iacute;a</a>
+      <a href="#mercado">El mercado</a>
       <a href="#metodo">M&eacute;todo</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -2461,6 +3531,81 @@ body { background: transparent; }
 </section>
 
 <!-- ============ CIFRAS ============ -->
+<!-- ============ EL TERRENO DONDE TRABAJAMOS ============ -->
+<section class="sec terreno" id="mercado">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="sec__title rv rv--mask">El terreno donde <em>trabajamos</em></h2>
+      <p class="sec__body rv rv--up">Conviene decir con franqueza d&oacute;nde est&aacute; parada la empresa dominicana promedio y en qu&eacute; contexto tiene que administrarse. Todos los datos que siguen provienen de fuentes p&uacute;blicas verificables, citadas al pie.</p>
+    </div>
+
+    <div class="terr__fig rv rv--up">
+      <div>
+        <div class="dotm" role="img" aria-label="De cada 100 MIPYMES con local fijo en Rep&uacute;blica Dominicana, 81 no cuentan con contabilidad ni con RNC.">
+          <i class="off" style="--d:0"></i><i class="off" style="--d:1"></i><i class="off" style="--d:2"></i><i class="off" style="--d:3"></i><i class="off" style="--d:4"></i><i class="off" style="--d:5"></i><i class="off" style="--d:6"></i><i class="off" style="--d:7"></i><i class="off" style="--d:8"></i><i class="" style="--d:9"></i>
+          <i class="off" style="--d:10"></i><i class="off" style="--d:11"></i><i class="off" style="--d:12"></i><i class="off" style="--d:13"></i><i class="off" style="--d:14"></i><i class="off" style="--d:15"></i><i class="off" style="--d:16"></i><i class="off" style="--d:17"></i><i class="off" style="--d:18"></i><i class="" style="--d:19"></i>
+          <i class="off" style="--d:20"></i><i class="off" style="--d:21"></i><i class="off" style="--d:22"></i><i class="off" style="--d:23"></i><i class="off" style="--d:24"></i><i class="off" style="--d:25"></i><i class="off" style="--d:26"></i><i class="" style="--d:27"></i><i class="" style="--d:28"></i><i class="off" style="--d:29"></i>
+          <i class="off" style="--d:30"></i><i class="off" style="--d:31"></i><i class="off" style="--d:32"></i><i class="off" style="--d:33"></i><i class="" style="--d:34"></i><i class="off" style="--d:35"></i><i class="off" style="--d:36"></i><i class="" style="--d:37"></i><i class="off" style="--d:38"></i><i class="off" style="--d:39"></i>
+          <i class="off" style="--d:40"></i><i class="off" style="--d:41"></i><i class="off" style="--d:42"></i><i class="off" style="--d:43"></i><i class="off" style="--d:44"></i><i class="off" style="--d:45"></i><i class="off" style="--d:46"></i><i class="" style="--d:47"></i><i class="off" style="--d:48"></i><i class="" style="--d:49"></i>
+          <i class="off" style="--d:50"></i><i class="" style="--d:51"></i><i class="" style="--d:52"></i><i class="" style="--d:53"></i><i class="" style="--d:54"></i><i class="off" style="--d:55"></i><i class="off" style="--d:56"></i><i class="off" style="--d:57"></i><i class="" style="--d:58"></i><i class="off" style="--d:59"></i>
+          <i class="off" style="--d:60"></i><i class="off" style="--d:61"></i><i class="" style="--d:62"></i><i class="off" style="--d:63"></i><i class="off" style="--d:64"></i><i class="off" style="--d:65"></i><i class="off" style="--d:66"></i><i class="off" style="--d:67"></i><i class="off" style="--d:68"></i><i class="" style="--d:69"></i>
+          <i class="off" style="--d:70"></i><i class="off" style="--d:71"></i><i class="" style="--d:72"></i><i class="off" style="--d:73"></i><i class="off" style="--d:74"></i><i class="off" style="--d:75"></i><i class="off" style="--d:76"></i><i class="off" style="--d:77"></i><i class="off" style="--d:78"></i><i class="off" style="--d:79"></i>
+          <i class="off" style="--d:80"></i><i class="off" style="--d:81"></i><i class="" style="--d:82"></i><i class="off" style="--d:83"></i><i class="off" style="--d:84"></i><i class="off" style="--d:85"></i><i class="off" style="--d:86"></i><i class="" style="--d:87"></i><i class="off" style="--d:88"></i><i class="off" style="--d:89"></i>
+          <i class="" style="--d:90"></i><i class="off" style="--d:91"></i><i class="off" style="--d:92"></i><i class="off" style="--d:93"></i><i class="off" style="--d:94"></i><i class="off" style="--d:95"></i><i class="off" style="--d:96"></i><i class="off" style="--d:97"></i><i class="off" style="--d:98"></i><i class="off" style="--d:99"></i>
+        </div>
+        <div class="dotm__k">
+          <span><b class="kf"></b> 81 de cada 100 sin contabilidad ni RNC</span>
+          <span><b class="kv"></b> 19 con estructura formal</span>
+        </div>
+      </div>
+      <div>
+        <h3>La empresa dominicana promedio no lleva contabilidad</h3>
+        <p>M&aacute;s del 81% de las MIPYMES con local fijo no cuenta con contabilidad ni con RNC; en unidades m&oacute;viles y agropecuarias la cifra pasa del 90%. Ese es el punto de partida de casi todos nuestros clientes cuando llegan. No es un defecto de car&aacute;cter del empresario dominicano: es que nadie le mont&oacute; nunca la estructura.</p>
+        <div class="terr__stats">
+          <div class="terr__stat"><b>404,034</b><span>MIPYMES en el pa&iacute;s. Representan el 85.9% de las unidades econ&oacute;micas.</span><em>Banco Central y MICM &middot; ENMIPYMES 2022-2023</em></div>
+          <div class="terr__stat"><b>85.2%</b><span>opera de manera informal. Solo el 14.8% est&aacute; formalmente registrado.</span><em>ENMIPYMES 2022-2023</em></div>
+          <div class="terr__stat"><b>33.1%</b><span>de las peque&ntilde;as empresas usa bancos para financiar inversiones, frente al 55.1% de las medianas.</span><em>Banco Mundial &middot; Enterprise Surveys RD 2025</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="terr__band rv rv--up">
+      <h3>La carga de cumplimiento est&aacute; en su punto m&aacute;s alto</h3>
+      <p>Al mismo tiempo que la empresa necesita ordenarse, el calendario de obligaciones se volvi&oacute; m&aacute;s denso y m&aacute;s exigente en tiempo. El resultado pr&aacute;ctico es que la atenci&oacute;n de todos termina puesta en la fecha l&iacute;mite m&aacute;s pr&oacute;xima, y no en la informaci&oacute;n que hace falta para dirigir.</p>
+      <div class="terr__facts">
+        <div class="terr__fact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h13l3 3v15H4z"></path><path d="M8 9h8M8 13h8M8 17h5"></path></svg>
+          <div><h4>Facturaci&oacute;n electr&oacute;nica a escala nacional</h4><p>En 2026 la DGII recibi&oacute; m&aacute;s de 2,000 millones de comprobantes fiscales electr&oacute;nicos, con m&aacute;s de 80,000 emisores autorizados y el 72% de los comprobantes del semestre ya en formato electr&oacute;nico.</p></div>
+        </div>
+        <div class="terr__fact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+          <div><h4>El plazo vence el 15 de noviembre de 2026</h4><p>Es la fecha l&iacute;mite para micro y peque&ntilde;os contribuyentes conforme a la Ley 32-23 y el Aviso 06-26. Ese segmento concentra el 98.7% del universo MIPYME del pa&iacute;s.</p></div>
+        </div>
+        <div class="terr__fact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+          <div><h4>La auditor&iacute;a es una obligaci&oacute;n latente</h4><p>La DGII exige el dictamen de estados financieros en presentaci&oacute;n f&iacute;sica, en rectificativa o cuando lo requiere, seg&uacute;n su respuesta oficial CA149. Para la mayor&iacute;a de las empresas eso significa pasar el a&ntilde;o entero sin que nadie revise sus cifras.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="terr__close rv rv--up">
+      <div>
+        <h3>El modelo que aplicamos tiene respaldo internacional</h3>
+        <p>Lo que la firma hace desde hace a&ntilde;os tiene nombre propio en la profesi&oacute;n: Client Advisory Services, o servicios de CFO externo. Es contabilidad, s&iacute;, pero auditada mes a mes, convertida en indicadores y discutida con la gerencia antes de que el mes siguiente empiece a correr.</p>
+        <p>No es una moda marginal ni una categor&iacute;a que estemos improvisando: es la l&iacute;nea de mayor crecimiento de la profesi&oacute;n a nivel internacional, y es la que decidimos desarrollar a fondo para el empresario dominicano.</p>
+        <p class="terr__claim">En Rep&uacute;blica Dominicana todav&iacute;a son muy pocas las firmas que llevan la contabilidad financiera a esta profundidad. La mayor&iacute;a del mercado sigue organizada alrededor del cumplimiento y del tr&aacute;mite.</p>
+      </div>
+      <div class="cas">
+        <div class="cas__i"><b>17%</b><span>Crecimiento anual mediano de las pr&aacute;cticas de asesor&iacute;a al cliente, con proyecci&oacute;n de duplicar ingresos en tres a&ntilde;os.</span></div>
+        <div class="cas__i"><b>+30%</b><span>M&aacute;s ingresos recurrentes mensuales reportan las firmas que ofrecen servicios de CFO externo frente a las que no los ofrecen.</span></div>
+        <div class="cas__i"><b>3 a&ntilde;os</b><span>Consecutivos como la l&iacute;nea de mayor crecimiento en el Top 100 de firmas de Estados Unidos.</span></div>
+      </div>
+    </div>
+
+    <p class="terr__src rv rv--up"><b>Fuentes.</b> Banco Central y MICM, ENMIPYMES 2022-2023 &middot; Oficina Nacional de Estad&iacute;stica, Bolet&iacute;n Panorama Estad&iacute;stico 88 sobre ENHOGAR-2013 &middot; Banco Mundial, Enterprise Surveys Rep&uacute;blica Dominicana 2025 &middot; DGII, comunicaciones oficiales y respuesta CA149 de su Comunidad de Ayuda &middot; Ley 32-23 y Aviso 06-26 &middot; AICPA y CPA.com, CAS Benchmark Survey 2024 &middot; Accounting Today, marzo 2026.</p>
+  </div>
+</section>
+
 <section class="sec" id="metodo">
   <div class="wrap">
     <div class="sec__head">
@@ -2472,8 +3617,590 @@ body { background: transparent; }
       <div class="fig rv rv--up"><h3 data-count="17">17</h3><p>Profesionales</p></div>
       <div class="fig rv rv--r"><h3 data-count="5">5</h3><p>Asesores</p></div>
     </div>
+
+    <div class="arco rv rv--up">
+      <div class="arco__s">
+        <div class="arco__d"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M16 16l5 5"></path></svg></div>
+        <h4>Conocer</h4>
+        <p>Comprendemos la empresa, su modelo de negocio, sus operaciones, sus sistemas y su gente. Antes de proponer nada.</p>
+      </div>
+      <div class="arco__s">
+        <div class="arco__d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v3H9z"></path><path d="M15 4h3v17H6V4h3"></path><path d="M9.5 13l2 2 3.5-4"></path></svg></div>
+        <h4>Diagnosticar</h4>
+        <p>Identificamos situaci&oacute;n actual, riesgos y oportunidades, con hallazgos documentados y clasificados por severidad.</p>
+      </div>
+      <div class="arco__s">
+        <div class="arco__d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l4-1 11-11-3-3L4 17z"></path><path d="M14 4l3 3"></path><path d="M17 14h4M19 12v4"></path></svg></div>
+        <h4>Dise&ntilde;ar</h4>
+        <p>Definimos procesos, cat&aacute;logo de cuentas, pol&iacute;ticas, controles, formularios y responsabilidades.</p>
+      </div>
+      <div class="arco__s">
+        <div class="arco__d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M4 12h7M4 18h10"></path><path d="M15 9l4 3-4 3z"></path><circle cx="19" cy="6" r="2"></circle></svg></div>
+        <h4>Implementar</h4>
+        <p>Acompa&ntilde;amos la puesta en funcionamiento, con capacitaci&oacute;n al personal y pruebas antes de operar en firme.</p>
+      </div>
+      <div class="arco__s">
+        <div class="arco__d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h4>Controlar</h4>
+        <p>Establecemos seguimiento, conciliaci&oacute;n, auditor&iacute;a de escritorio e indicadores que sostienen el orden alcanzado.</p>
+      </div>
+      <div class="arco__s">
+        <div class="arco__d"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg></div>
+        <h4>Mejorar</h4>
+        <p>Evaluamos resultados, medimos desviaciones y ajustamos. La estructura de un cliente en el mes 24 no es la del mes 1.</p>
+      </div>
+    </div>
+    <p class="arco__nota rv rv--up">Las tres primeras etapas montan la estructura. Las tres &uacute;ltimas se repiten cada mes mientras dure la relaci&oacute;n. Ese es el punto: la firma no entra, entrega un informe y se va.</p>
+    <div class="prin rv rv--up">
+      <div class="prin__i key">
+        <span class="prin__n">PRINCIPIO 01</span>
+        <h4>Quien registra no es quien audita</h4>
+        <p>Cada mes un auditor de escritorio revisa el trabajo del registro. Son personas distintas y responsabilidades distintas. Es lo que separa una contabilidad procesada de una contabilidad auditada, y es poco frecuente encontrarlo dentro de una iguala mensual.</p>
+      </div>
+      <div class="prin__i">
+        <span class="prin__n">PRINCIPIO 02</span>
+        <h4>Ning&uacute;n dato se da por bueno sin evidencia</h4>
+        <p>Si no hay certeza suficiente sobre una cifra, se marca y se consulta. No se completa por l&oacute;gica ni por costumbre.</p>
+      </div>
+      <div class="prin__i">
+        <span class="prin__n">PRINCIPIO 03</span>
+        <h4>Cada procedimiento est&aacute; escrito</h4>
+        <p>Reglas, umbrales y errores conocidos documentados como protocolo de la firma. No dependen de la memoria de quien los ejecuta.</p>
+      </div>
+      <div class="prin__i">
+        <span class="prin__n">PRINCIPIO 04</span>
+        <h4>Toda excepci&oacute;n se documenta con su asiento</h4>
+        <p>El hallazgo llega con el asiento completo y la correcci&oacute;n propuesta, no como una observaci&oacute;n general.</p>
+      </div>
+      <div class="prin__i">
+        <span class="prin__n">PRINCIPIO 05</span>
+        <h4>El cierre ocurre a tiempo</h4>
+        <p>La informaci&oacute;n se entrega mientras todav&iacute;a sirve para decidir sobre el mes en curso. Un informe que llega tarde no sirve para decidir: sirve para lamentarse.</p>
+      </div>
+      <div class="prin__i">
+        <span class="prin__n">PRINCIPIO 06</span>
+        <h4>La entrega termina en conversaci&oacute;n</h4>
+        <p>El informe se presenta y se discute con la gerencia. Sin esa reuni&oacute;n el trabajo queda a medias.</p>
+      </div>
+    </div>
+    <div class="limites rv rv--up">
+      <h3>Lo que no somos</h3>
+      <p>Por honestidad comercial, tambi&eacute;n conviene decir qu&eacute; no ofrece este modelo.</p>
+      <ul>
+        <li><b>No somos un despacho de tr&aacute;mites.</b>Si lo que la empresa necesita es &uacute;nicamente presentar sus declaraciones, este alcance le queda grande y se lo decimos de frente antes de contratar.</li>
+        <li><b>No garantizamos un porcentaje de retorno por adelantado.</b>Sin base hist&oacute;rica confiable, cualquier n&uacute;mero de ese tipo es decorativo. Fijamos una l&iacute;nea base de indicadores y medimos contra ella.</li>
+        <li><b>No maquillamos estados financieros.</b>Blindar un estado para el banco significa dejarlo exacto y soportado con evidencia, no falsearlo. Que las cifras resistan la pregunta, no que la esquiven.</li>
+        <li><b>No trabajamos sin informaci&oacute;n.</b>La calidad del resultado depende de que la documentaci&oacute;n llegue completa y a tiempo, y de que la empresa designe a alguien responsable de facilitarla.</li>
+      </ul>
+    </div>
   </div>
 </section>
+
+<!-- ============ METODOLOGIA POR SERVICIO ============ -->
+<section class="sec" id="metodologia">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="sec__title rv rv--mask">C&oacute;mo trabajamos <em>cada servicio</em></h2>
+      <p class="sec__body rv rv--up">Cada l&iacute;nea funciona por s&iacute; sola y todas encajan entre s&iacute;. Abajo est&aacute; el detalle de qu&eacute; hacemos, en qu&eacute; orden y qu&eacute; queda de cada paso. Abra la que le interese.</p>
+    </div>
+    <div class="met rv rv--up">
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">01</span>
+          <span class="met__t">Contabilidad<span class="met__sub">Del diagn&oacute;stico inicial al informe financiero mensual</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">Lo que sostiene esta l&iacute;nea no es el registro, es la revisi&oacute;n. Cada mes los auditores de la firma no se limitan a recibir lo que el cliente registr&oacute;: lo validan contra el documento f&iacute;sico y contra el sistema antes de que las cifras lleguen a un estado financiero.</p>
+          <div class="fase"><h5>C&oacute;mo comenzamos</h5><i>Una sola vez, al inicio &middot; de una a seis semanas</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-diag"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Diagn&oacute;stico por &aacute;reas</h6>
+              <p>Cuestionario, entrevistas y observaci&oacute;n directa en el sitio. Cada &aacute;rea se documenta con situaci&oacute;n actual, fortalezas, riesgos y recomendaciones, y los hallazgos se clasifican por severidad.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-corte"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Levantamiento a fecha de corte</h6>
+              <p>Se concilia caja y bancos, se depuran cuentas por cobrar y por pagar, se levanta el inventario f&iacute;sico, se identifican los pasivos reales y se determina el patrimonio efectivo.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-catalogo"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Cat&aacute;logo de cuentas seg&uacute;n el giro</h6>
+              <p>No es una plantilla. Una constructora necesita contabilidad por obra; una cadena de tiendas, prorrateo por local; una cl&iacute;nica, separar servicios y almacenes.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-sistema"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Sistema, pol&iacute;ticas y arranque</h6>
+              <p>Pol&iacute;ticas contables bajo NIIF para PYMES, segregaci&oacute;n de funciones, parametrizaci&oacute;n, carga de saldos de apertura, pruebas funcionales y capacitaci&oacute;n de los usuarios designados.</p>
+            </div>
+          </div>
+          <div class="fase"><h5>C&oacute;mo trabajamos cada mes</h5><i>Todos los meses, de forma continua</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-docs"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Recepci&oacute;n y organizaci&oacute;n</h6>
+              <p>Facturas, NCF, estados bancarios, n&oacute;mina, conduces y reportes del sistema, ordenados antes de tocar un asiento.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-registro"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Registro de operaciones</h6>
+              <p>Se registran las operaciones del mes, o se revisa el registro hecho por el personal del cliente.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-audit"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Auditor&iacute;a de escritorio por ciclo</h6>
+              <p>Compras, cheques y transferencias, dep&oacute;sitos, n&oacute;mina, inventario, cuentas por cobrar y por pagar. Documento f&iacute;sico contra sistema, asiento por asiento.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-banco"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Conciliaci&oacute;n bancaria formal</h6>
+              <p>Cada cuenta, con identificaci&oacute;n de tr&aacute;nsitos y de partidas en banco no registradas y viceversa. Cuadrando a cero.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-cruce"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Cruce de balanza contra estados</h6>
+              <p>Cuenta por cuenta contra el estado de resultados, los anexos y el estado de situaci&oacute;n financiera.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-cuadre"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Verificaci&oacute;n de cuadre</h6>
+              <p>Activos igual a pasivos m&aacute;s patrimonio. Al centavo.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-hallazgo"></use></svg></div>
+              <span class="paso__n">07</span>
+              <h6>Memorando de hallazgos</h6>
+              <p>Cada excepci&oacute;n llega con su asiento completo y la correcci&oacute;n propuesta, no como una observaci&oacute;n general.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-informe"></use></svg></div>
+              <span class="paso__n">08</span>
+              <h6>Informe y reuni&oacute;n de decisi&oacute;n</h6>
+              <p>Se prepara el informe financiero del mes y se presenta a la gerencia. El informe sin esa conversaci&oacute;n es papel.</p>
+            </div>
+          </div>
+          <div class="cadena"><span>Conocer</span> <i>&rarr;</i> <span>Organizar</span> <i>&rarr;</i> <span>Controlar</span> <i>&rarr;</i> <span>Informar</span> <i>&rarr;</i> <span>Decidir</span> <i>&rarr;</i> <span>Crecer</span></div>
+        </div></div></div>
+      </div>
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">02</span>
+          <span class="met__t">Auditor&iacute;a<span class="met__sub">Barrido partida por partida, con cat&aacute;logo de procedimientos</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">Trabajamos con papeles de trabajo, evidencia y trazabilidad de cada partida. El principio que sostiene la l&iacute;nea es simple: quien registra no es quien audita. Son personas distintas y responsabilidades distintas, y por eso un error se detecta en el mes y no un a&ntilde;o despu&eacute;s.</p>
+          <div class="fase"><h5>C&oacute;mo se ejecuta</h5><i>Plan anual y revisi&oacute;n continua</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-plan"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Plan anual de auditor&iacute;a</h6>
+              <p>Alcance, ciclos y calendario definidos seg&uacute;n el riesgo real de cada &aacute;rea, no seg&uacute;n la costumbre.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-audit"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Auditor&iacute;a de escritorio continua</h6>
+              <p>Cada mes, documento f&iacute;sico contra registro y contra sistema. Quien registra no es quien audita: son personas y responsabilidades distintas.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-inv"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Inventarios y costos</h6>
+              <p>Conteo f&iacute;sico contra sistema, transferencias entre almacenes contra recepciones, sobrantes y faltantes, m&eacute;todo de valuaci&oacute;n.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-fiscal"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Auditor&iacute;a fiscal preventiva</h6>
+              <p>Se mide la exposici&oacute;n ante la DGII antes de que exista un requerimiento, no despu&eacute;s.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-hallazgo"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Hallazgos con su asiento</h6>
+              <p>Cada excepci&oacute;n se documenta con el asiento completo, la correcci&oacute;n propuesta, su severidad y su lugar en la matriz de riesgo.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-informe"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Carta a la gerencia</h6>
+              <p>Los papeles de trabajo se convierten en recomendaciones que alguien puede ejecutar, con responsable y plazo.</p>
+            </div>
+          </div>
+          <div class="fase"><h5>Cat&aacute;logo de procedimientos mensuales</h5><i>14 protocolos escritos &middot; toque cada uno para ver qu&eacute; valida y qu&eacute; detecta</i></div>
+          <div class="proc">
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-audit"></use></svg></span>
+                <span class="proc__t">Auditor&iacute;a del ciclo de compras</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Cada asiento contra el reporte de compras y las facturas. Cuenta de d&eacute;bito est&aacute;ndar por suplidor, ITBIS al 18% y su derecho a cr&eacute;dito, NCF v&aacute;lidos y no duplicados, informales sin comprobante, activos registrados como gasto, gastos personales del propietario y proveedores cruzados.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-606"></use></svg></span>
+                <span class="proc__t">Formato 606 y registro de compras</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Amarre del 606 contra la contabilidad: cuenta de compras, ITBIS adelantado, retenciones y saldo del suplidor. Consistencia de la clasificaci&oacute;n entre meses.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-cheques"></use></svg></span>
+                <span class="proc__t">Auditor&iacute;a de cheques y transferencias</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Cuadre d&eacute;bito contra cr&eacute;dito y contra el total impreso. Asiento normal suplidor contra banco. Detecta cargos a cuentas personales del socio, n&oacute;mina no registrada, donaciones, pr&eacute;stamos y cheques anulados que quedaron vivos.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-deposito"></use></svg></span>
+                <span class="proc__t">Auditor&iacute;a de dep&oacute;sitos</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Banco al d&eacute;bito, caja al cr&eacute;dito, comisi&oacute;n de tarjeta y retenci&oacute;n de ITBIS de la Norma 08-04 al d&eacute;bito. Detecta pasivos en el cr&eacute;dito, asientos descuadrados, cuentas puente y contradicciones entre concepto y registro.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-banco"></use></svg></span>
+                <span class="proc__t">Conciliaci&oacute;n bancaria mensual</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Estado bancario contra contabilidad contra tr&aacute;nsitos del mes anterior. Partidas en banco no registradas, registros sin reflejo en banco, cuadre a cero.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-cxp"></use></svg></span>
+                <span class="proc__t">Cruce de cuentas por pagar</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Balanza contra antig&uuml;edad de saldos, suplidor por suplidor. Clasifica en igual, diferente, solo en balanza y solo en antig&uuml;edad, y comprueba que la suma de diferencias iguale el total.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-cxc"></use></svg></span>
+                <span class="proc__t">Cuentas por cobrar</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Antig&uuml;edad, gesti&oacute;n de cobranza, cuentas por cobrar a empleados y cruce con el auxiliar.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-inv"></use></svg></span>
+                <span class="proc__t">Inventario</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Conteo f&iacute;sico contra sistema, transferencias entre almacenes o tiendas contra recepciones y contra el registro contable, sobrantes y faltantes, valuaci&oacute;n.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-nomina"></use></svg></span>
+                <span class="proc__t">N&oacute;mina y obligaciones laborales</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Planillas, novedades, licencias, horas extras, vacaciones, regal&iacute;a y prestaciones. Amarre TSS contra contabilidad, SIRLA, DGT-2, DGT-3, DGT-4, IR-3 e IR-13.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-varia"></use></svg></span>
+                <span class="proc__t">An&aacute;lisis de variaci&oacute;n de gastos</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Comparaci&oacute;n de los &uacute;ltimos tres meses por cuenta control y auxiliar. Gastos faltantes, aumentos y disminuciones de 15% o m&aacute;s, registros con tipo de documento incorrecto.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-cruce"></use></svg></span>
+                <span class="proc__t">Balanza contra estados financieros</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Cuenta por cuenta: anexos, estado de resultados y estado de situaci&oacute;n contra la balanza. Reclasificaciones, valores mal mapeados y descuadres, con cuadre al 100%.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-prorra"></use></svg></span>
+                <span class="proc__t">Prorrateo de gastos compartidos</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Distribuci&oacute;n multinivel entre sucursales y l&iacute;neas de negocio, con validaci&oacute;n de cuadres al centavo.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-equilibrio"></use></svg></span>
+                <span class="proc__t">Punto de equilibrio por unidad</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Piso, punto medio y meta con margen objetivo por tienda o punto de venta, con evoluci&oacute;n contra el mes anterior.</p></div></div>
+            </div>
+            <div class="proc__r">
+              <button class="proc__h" type="button" aria-expanded="false" onclick="abrirProc(this)">
+                <span class="proc__ic"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-inspec"></use></svg></span>
+                <span class="proc__t">Inspecci&oacute;n profunda final</span>
+                <svg class="proc__c" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="proc__b"><div><p>Ciclos de revisi&oacute;n sobre el entregable hasta cero errores: cifras, ortograf&iacute;a y tildes, totales, formato y coherencia l&oacute;gica.</p></div></div>
+            </div>
+          </div>
+          <p class="proc__nota">Cada uno de estos procedimientos est&aacute; documentado como un protocolo escrito de la firma, con sus reglas, sus umbrales y sus errores conocidos. No dependen de la memoria del auditor que lo ejecuta: por eso el mismo est&aacute;ndar se aplica en una ferreter&iacute;a de La Vega y en una cl&iacute;nica de Barahona.</p>
+        </div></div></div>
+      </div>
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">03</span>
+          <span class="met__t">Gesti&oacute;n fiscal<span class="met__sub">Cumplimiento respaldado por informaci&oacute;n verificable</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">No concebimos la contabilidad fiscal como un proceso aparte. Una declaraci&oacute;n confiable se sustenta en una contabilidad organizada y en documentaci&oacute;n verificable, as&iacute; que antes de preparar cualquier obligaci&oacute;n validamos la informaci&oacute;n contra los registros y los documentos que la respaldan.</p>
+          <div class="cadena"><span>Operaciones</span> <i>&rarr;</i> <span>Contabilidad</span> <i>&rarr;</i> <span>Informaci&oacute;n fiscal</span> <i>&rarr;</i> <span>Declaraciones</span> <i>&rarr;</i> <span>Cumplimiento</span></div>
+          <div class="fase"><h5>El ciclo de cumplimiento</h5><i>Mensual y anual, seg&uacute;n la obligaci&oacute;n</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-fiscal"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Diagn&oacute;stico de situaci&oacute;n fiscal</h6>
+              <p>Perfil tributario, obligaciones vigentes, provisiones y observaciones previas de la DGII.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-archivo"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Organizaci&oacute;n documental</h6>
+              <p>Archivo ordenado de declaraciones y soportes, de modo que cada cifra declarada tenga su respaldo localizable.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-ncf"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Comprobantes fiscales y e-CF</h6>
+              <p>Validez de los NCF, duplicidades, informales sin comprobante y avance real en facturaci&oacute;n electr&oacute;nica.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-606"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Conciliaci&oacute;n contable-fiscal</h6>
+              <p>Formatos 606 y 607 amarrados a la contabilidad: compras, ITBIS adelantado, retenciones y saldo del suplidor.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-declara"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Determinaci&oacute;n y declaraci&oacute;n</h6>
+              <p>IT-1, IR-3, IR-17, IR-2 y retenciones de ISR e ITBIS, en calendario y con seguimiento de fechas.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-req"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Atenci&oacute;n a requerimientos</h6>
+              <p>Respuesta a la DGII con la documentaci&oacute;n ya ordenada, no armada a &uacute;ltima hora.</p>
+            </div>
+          </div>
+        </div></div></div>
+      </div>
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">04</span>
+          <span class="met__t">Consultor&iacute;a empresarial<span class="met__sub">Del dato al plan, y del plan a la decisi&oacute;n</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">Aqu&iacute; la contabilidad deja de ser registro y pasa a ser argumento: lo que sostiene una decisi&oacute;n de compra, de inversi&oacute;n o de financiamiento. Y cuando la empresa necesita rumbo y no solo cifras, el mismo m&eacute;todo se aplica a la planificaci&oacute;n estrat&eacute;gica.</p>
+          <div class="fase"><h5>Consultor&iacute;a financiera</h5><i>Trabajo puntual o dentro del acompa&ntilde;amiento mensual</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-linea"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>L&iacute;nea base de indicadores</h6>
+              <p>Una vez que existe informaci&oacute;n organizada se fija la l&iacute;nea base y se mide contra ella. Antes de eso, cualquier meta es decorativa.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-costos"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Estructura de costos y precios</h6>
+              <p>Costo real contra presupuestado, estructura porcentual y rentabilidad por l&iacute;nea, obra, tienda o unidad de negocio.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-equilibrio"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Punto de equilibrio por unidad</h6>
+              <p>Piso, punto medio y meta con margen objetivo por punto de venta, con evoluci&oacute;n contra el mes anterior.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-proy"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Proyecciones y flujo de caja</h6>
+              <p>Capital de trabajo, evaluaci&oacute;n de inversiones y proyecci&oacute;n del efectivo con los supuestos a la vista.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-banco2"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Estados preparados para cr&eacute;dito</h6>
+              <p>Cruzados contra Central de Riesgo, IR-2 y movimientos bancarios. Blindar significa dejarlos exactos y soportados, no falsearlos.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-comite"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Ante el analista y el comit&eacute;</h6>
+              <p>Se anticipan las preguntas del analista y se responden los cuestionarios del comit&eacute; de cr&eacute;dito con la evidencia en la mano.</p>
+            </div>
+          </div>
+          <div class="fase"><h5>Planificaci&oacute;n estrat&eacute;gica</h5><i>Proyecto con acta de entrega por etapa</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-identidad"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Identidad y rumbo</h6>
+              <p>Definici&oacute;n o revisi&oacute;n de misi&oacute;n, visi&oacute;n, valores y principios, con el propietario en la mesa.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-foda"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>An&aacute;lisis estrat&eacute;gico</h6>
+              <p>FODA, an&aacute;lisis del entorno, evaluaci&oacute;n interna, riesgos y factores cr&iacute;ticos de &eacute;xito.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-objetivo"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Objetivos medibles</h6>
+              <p>La visi&oacute;n se traduce en objetivos que se pueden verificar, no en declaraciones de intenci&oacute;n.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-plan"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Plan de acci&oacute;n</h6>
+              <p>Cada objetivo baja a iniciativa, actividad, responsable, fecha, indicador y meta.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-kpi"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Indicadores de gesti&oacute;n</h6>
+              <p>KPI que permiten evaluar el avance sin discusi&oacute;n sobre si se cumpli&oacute; o no.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-segui"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Seguimiento y correcci&oacute;n</h6>
+              <p>Revisi&oacute;n peri&oacute;dica para medir resultados, detectar desviaciones y corregir mientras hay tiempo.</p>
+            </div>
+          </div>
+          <div class="cadena"><span>Objetivo</span> <i>&rarr;</i> <span>Iniciativa</span> <i>&rarr;</i> <span>Actividad</span> <i>&rarr;</i> <span>Responsable</span> <i>&rarr;</i> <span>Fecha</span> <i>&rarr;</i> <span>Indicador</span> <i>&rarr;</i> <span>Meta</span></div>
+        </div></div></div>
+      </div>
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">05</span>
+          <span class="met__t">Recursos humanos<span class="met__sub">Expediente, n&oacute;mina, TSS y contabilidad como un solo sistema</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">Lo que buscamos es que exista correspondencia entre cuatro fuentes que en la mayor&iacute;a de las empresas no se hablan entre s&iacute;. Cuando una n&oacute;mina se registra mal se nota en la TSS, en el estado de resultados y en el indicador de costo de personal: si las capas est&aacute;n conectadas, el error se detecta en el mes; si no, aparece un a&ntilde;o despu&eacute;s.</p>
+          <div class="cadena"><span>Contrataci&oacute;n</span> <i>&rarr;</i> <span>Expediente</span> <i>&rarr;</i> <span>N&oacute;mina</span> <i>&rarr;</i> <span>TSS</span> <i>&rarr;</i> <span>SIRLA</span> <i>&rarr;</i> <span>Contabilidad</span></div>
+          <div class="fase"><h5>C&oacute;mo organizamos el &aacute;rea</h5><i>Implementaci&oacute;n y luego acompa&ntilde;amiento mensual</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-rrhh"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Diagn&oacute;stico y dise&ntilde;o del &aacute;rea</h6>
+              <p>Estructura, organigrama, perfiles de puesto y manual de organizaci&oacute;n, alineados con los objetivos de la empresa.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-politicas"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Pol&iacute;ticas y procedimientos</h6>
+              <p>Formularios, controles, acciones de personal y documentaci&oacute;n laboral, escritos y en uso.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-exped"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Expedientes de empleados</h6>
+              <p>Archivo f&iacute;sico y digital completo: contratos, ingresos, movimientos, permisos, vacaciones, amonestaciones y terminaciones.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-nomina"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>N&oacute;mina y auditor&iacute;a mensual</h6>
+              <p>Planillas, novedades, licencias, horas extras, vacaciones, regal&iacute;a y prestaciones, con validaci&oacute;n t&eacute;cnica de los c&aacute;lculos e informe mensual de observaciones.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-amarre"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Amarre TSS, SIRLA y contabilidad</h6>
+              <p>Registro de novedades, DGT-2, DGT-3, DGT-4 y DGT-5, conciliados contra la n&oacute;mina y contra el estado de resultados.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-desemp"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Desempe&ntilde;o y desarrollo</h6>
+              <p>Objetivos e indicadores por puesto, evaluaciones, retroalimentaci&oacute;n estructurada y planes de desarrollo.</p>
+            </div>
+          </div>
+        </div></div></div>
+      </div>
+      <div class="met__row">
+        <button class="met__head" type="button" aria-expanded="false" onclick="abrirMet(this)">
+          <span class="met__n">06</span>
+          <span class="met__t">DH Academy<span class="met__sub">Para que el equipo del cliente sostenga el est&aacute;ndar</span></span>
+          <svg class="met__chev" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="met__panel"><div><div class="met__in">
+          <p class="met__lead">La metodolog&iacute;a no se queda en conceptos. Los programas incorporan casos pr&aacute;cticos, ejercicios, plantillas, herramientas de trabajo, evaluaciones y aplicaci&oacute;n a situaciones reales de la empresa.</p>
+          <div class="fase"><h5>C&oacute;mo se arma un programa</h5><i>Abierto o in company, presencial o virtual</i></div>
+          <div class="pasos">
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-diag"></use></svg></div>
+              <span class="paso__n">01</span>
+              <h6>Diagn&oacute;stico de necesidades</h6>
+              <p>Se identifica qu&eacute; le falta al equipo del cliente para sostener por s&iacute; mismo lo que se implement&oacute;.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-modulos"></use></svg></div>
+              <span class="paso__n">02</span>
+              <h6>Dise&ntilde;o del programa</h6>
+              <p>Contenido, alcance, modalidad y duraci&oacute;n, armados a la medida de la empresa y no de un cat&aacute;logo gen&eacute;rico.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-material"></use></svg></div>
+              <span class="paso__n">03</span>
+              <h6>Materiales, casos y plantillas</h6>
+              <p>Casos pr&aacute;cticos, ejercicios, plantillas y herramientas aplicadas a situaciones reales de la empresa.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-capacita"></use></svg></div>
+              <span class="paso__n">04</span>
+              <h6>Ejecuci&oacute;n del programa</h6>
+              <p>Talleres presenciales, capacitaci&oacute;n virtual, seminarios, cursos especializados y entrenamientos in company.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-evalua"></use></svg></div>
+              <span class="paso__n">05</span>
+              <h6>Evaluaci&oacute;n del aprendizaje</h6>
+              <p>Evaluaciones y seguimiento, para saber qui&eacute;n qued&oacute; en condiciones de ejecutar y qui&eacute;n necesita refuerzo.</p>
+            </div>
+            <div class="paso">
+              <div class="paso__th"><svg class="pic" viewBox="0 0 78 50" aria-hidden="true"><use href="#pt-aplica"></use></svg></div>
+              <span class="paso__n">06</span>
+              <h6>Aplicaci&oacute;n medida en la empresa</h6>
+              <p>El programa cierra cuando lo aprendido se aplica en la operaci&oacute;n y el efecto se ve en los n&uacute;meros.</p>
+            </div>
+          </div>
+          <div class="cadena"><span>Aprender</span> <i>&rarr;</i> <span>Practicar</span> <i>&rarr;</i> <span>Aplicar</span> <i>&rarr;</i> <span>Medir</span> <i>&rarr;</i> <span>Mejorar</span></div>
+        </div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- ============ CIERRE ============ -->
@@ -2568,22 +4295,59 @@ body { background: transparent; }
   </div>
 </section>
 
+<!-- ============ ASESORES ESPECIALIZADOS ============ -->
+<!-- ============ ASESORES ESPECIALIZADOS ============ -->
+<section class="sec sec--alt" id="asesores">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2 class="sec__title rv rv--mask">Asesores <em>especializados</em></h2>
+      <p class="sec__body rv rv--up">La direcci&oacute;n t&eacute;cnica del trabajo mensual. Cada uno responde por una parte distinta del servicio: lo fiscal, la operaci&oacute;n y el an&aacute;lisis financiero.</p>
+    </div>
+    <div class="ases">
+      <article class="ases__i rv rv--l">
+        <div class="ases__ph"><img src="nelson-rubio.jpg" alt="Nelson A. Rubio" loading="lazy" decoding="async"></div>
+        <div class="ases__tx">
+          <h3>Nelson A. Rubio</h3>
+          <p class="ases__role">Socio Director de Gesti&oacute;n Fiscal Empresarial</p>
+          <p class="ases__cred">Contador P&uacute;blico Autorizado (CPA)</p>
+          <p class="ases__d">Conduce el cumplimiento tributario de toda la cartera: conciliaci&oacute;n contable-fiscal, revisi&oacute;n de comprobantes y e-CF, planificaci&oacute;n del cierre anual y defensa t&eacute;cnica ante la DGII.</p>
+        </div>
+      </article>
+      <article class="ases__i rv rv--up">
+        <div class="ases__ph"><img src="deyvis-delgado.jpg" alt="Lic. Deyvis de Js. Delgado" loading="lazy" decoding="async"></div>
+        <div class="ases__tx">
+          <h3>Lic. Deyvis de Js. Delgado</h3>
+          <p class="ases__role">Gerente de Operaciones</p>
+          <p class="ases__cred">Auditor financiero</p>
+          <p class="ases__d">Coordina la ejecuci&oacute;n mensual del servicio: asignaci&oacute;n de los equipos, cumplimiento de los protocolos de auditor&iacute;a y entrega en fecha de cada informe.</p>
+        </div>
+      </article>
+      <article class="ases__i rv rv--r">
+        <div class="ases__ph"><img src="luis-enrique-delgado.jpg" alt="Lic. Luis Enrique Delgado" loading="lazy" decoding="async"></div>
+        <div class="ases__tx">
+          <h3>Lic. Luis Enrique Delgado</h3>
+          <p class="ases__role">Gerente Financiero &mdash; An&aacute;lisis e Informes de Gesti&oacute;n</p>
+          <p class="ases__cred">Contador P&uacute;blico Autorizado (CPA)</p>
+          <p class="ases__d">Dirige el an&aacute;lisis financiero y la preparaci&oacute;n de los informes mensuales que se discuten con la gerencia, y la consultor&iacute;a financiera para banca, inversi&oacute;n y decisiones de crecimiento.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
 <!-- ============ COLABORADORES ============ -->
 <section class="sec sec--alt" id="equipo">
   <div class="wrap">
     <div class="sec__head">
-      <h2 class="sec__title rv rv--mask">Colaboradores y <em>asesores</em></h2>
+      <h2 class="sec__title rv rv--mask">Nuestros <em>colaboradores</em></h2>
       <p class="sec__body rv rv--up">Diecisiete profesionales entre auditores, analistas y asesores especializados en sistemas inform&aacute;ticos, planificaci&oacute;n, recursos humanos y proyectos de inversi&oacute;n p&uacute;blica.</p>
     </div>
     <div class="crew">
-        <div class="crew__i rv rv--up"><span>LD</span><b>Luis Enrique Delgado, CPA</b><i>Socio Ejecutivo &mdash; Coordinador Auditor&iacute;as Operativas</i></div>
-        <div class="crew__i rv rv--up"><span>NR</span><b>Nelson A. Rubio</b><i>Socio, Encargado Divisi&oacute;n de Gesti&oacute;n Fiscal</i></div>
         <div class="crew__i rv rv--up"><span>TB</span><b>Ing. Tony Beato</b><i>Asesor Corporativo en Sistema Inform&aacute;tico</i></div>
         <div class="crew__i rv rv--up"><span>NN</span><b>Lic. Nilda M. Nivar</b><i>Asesora de Planificaci&oacute;n</i></div>
         <div class="crew__i rv rv--up"><span>EL</span><b>Ing. Agron. Eduardo L&oacute;pez</b><i>Asesor de Proyectos de Inversi&oacute;n P&uacute;blica</i></div>
-        <div class="crew__i rv rv--up"><span>MP</span><b>Lic. Mar&iacute;a Rub&iacute; Pe&ntilde;a</b><i>Psic&oacute;loga, Asesora en Evaluaci&oacute;n y Gesti&oacute;n de RRHH</i></div>
         <div class="crew__i rv rv--up"><span>RD</span><b>Lic. Ra&uacute;l D&iacute;az</b><i>Asesor T&eacute;cnico de Planificaci&oacute;n</i></div>
-        <div class="crew__i rv rv--up"><span>DD</span><b>Lic. Deyvis de Js. Delgado</b><i>Auditor Financiero</i></div>
         <div class="crew__i rv rv--up"><span>EA</span><b>Lic. Eddy E. Abreu</b><i>Auditor Analista de Gesti&oacute;n Fiscal</i></div>
         <div class="crew__i rv rv--up"><span>NM</span><b>Licda. Nicole Mata</b><i>Auditora, Coordinadora de Planificaci&oacute;n</i></div>
         <div class="crew__i rv rv--up"><span>RC</span><b>Lic. Rafael Alex. C&aacute;ceres</b><i>Auditor Senior</i></div>
@@ -2593,51 +4357,319 @@ body { background: transparent; }
         <div class="crew__i rv rv--up"><span>AO</span><b>Altagracia Ojeda</b><i>Encargada de Servicios</i></div>
         <div class="crew__i rv rv--up"><span>RR</span><b>Lic. Robinson Rodr&iacute;guez</b><i>Auditor</i></div>
         <div class="crew__i rv rv--up"><span>SM</span><b>Lic. Sergio Manr&iacute;quez</b><i>Auditor</i></div>
+        <div class="crew__i rv rv--up"><span>AV</span><b>Ambar Valerio</b><i>Auditora Junior</i></div>
     </div>
   </div>
 </section>
 
 <!-- ============ CLIENTES ============ -->
+<!-- ============ CLIENTES POR TIPO DE NEGOCIO ============ -->
+<!-- ============ CLIENTES POR TIPO DE NEGOCIO ============ -->
+<!-- ============ CLIENTES POR TIPO DE NEGOCIO ============ -->
+<!-- ============ CLIENTES POR TIPO DE NEGOCIO ============ -->
 <section class="sec" id="clientes">
   <div class="wrap">
     <div class="sec__head">
       <h2 class="sec__title rv rv--mask">Quienes nos <em>conf&iacute;an</em> sus n&uacute;meros</h2>
-      <p class="sec__body rv rv--up">Constructoras, centros m&eacute;dicos, cooperativas, comercios, agroindustria y sector p&uacute;blico municipal.</p>
+      <p class="sec__body rv rv--up">Treinta y dos empresas e instituciones, agrupadas por su actividad econ&oacute;mica.</p>
+      <p class="rubro__nota rv rv--up">El cat&aacute;logo de cuentas se dise&ntilde;a seg&uacute;n el giro: una constructora necesita contabilidad por obra, una cadena de tiendas necesita prorrateo de gastos compartidos por local y una cl&iacute;nica necesita separar servicios y almacenes. Por eso el mismo protocolo produce resultados distintos en cada sector.</p>
     </div>
-    <ul class="cli">
-        <li class="rv rv--up">Constructora e Inversiones Charleston, SRL</li>
-        <li class="rv rv--up">Oh La La Experience, SRL</li>
-        <li class="rv rv--up">Matrix Cross Fitness, SRL</li>
-        <li class="rv rv--up">Grupo ARCON SRL</li>
-        <li class="rv rv--up">E&amp;V Express, SRL</li>
-        <li class="rv rv--up">Soluciones Vicente Ram&iacute;rez SRL</li>
-        <li class="rv rv--up">Denoagro SRL</li>
-        <li class="rv rv--up">Auto Mayella, SRL</li>
-        <li class="rv rv--up">Pintureca, SRL</li>
-        <li class="rv rv--up">Fascar, SRL</li>
-        <li class="rv rv--up">CS Todo Metal, SRL</li>
-        <li class="rv rv--up">Embi Comercial SRL</li>
-        <li class="rv rv--up">Mideca Importaciones SRL</li>
-        <li class="rv rv--up">Agroqu&iacute;mica Las Palmas</li>
-        <li class="rv rv--up">Elvin Auto Parts, SRL</li>
-        <li class="rv rv--up">Ferramientas &amp; Mass, SRL</li>
-        <li class="rv rv--up">Centro Regional Cardiovascular &mdash; CERECA</li>
-        <li class="rv rv--up">Centro de Especialidades M&eacute;dicos Veganos &mdash; CEMEVE</li>
-        <li class="rv rv--up">Ayuntamiento Municipal La Vega</li>
-        <li class="rv rv--up">Cooperativa COOPEVEGA</li>
-        <li class="rv rv--up">Centro M&eacute;dico Dominico Cubano</li>
-        <li class="rv rv--up">Panader&iacute;a Los Robles</li>
-        <li class="rv rv--up">Barrick Pueblo Viejo</li>
-        <li class="rv rv--up">Casa Marte SRL</li>
-        <li class="rv rv--up">Ashley Homestore SRL</li>
-        <li class="rv rv--up">Cibao Muebles SRL</li>
-        <li class="rv rv--up">Discoteca Lovera</li>
-        <li class="rv rv--up">Hotel Lovera</li>
-        <li class="rv rv--up">Carlos Vasquez Telecomunicaciones (CVTEL)</li>
-        <li class="rv rv--up">Ferreter&iacute;a Serie 48, SRL</li>
-        <li class="rv rv--up">Pizzer&iacute;a All'Aperto</li>
-        <li class="rv rv--up">Cl&iacute;nica Santo Tom&aacute;s &mdash; Barahona</li>
-    </ul>
+
+    <div class="filtros rv rv--up" role="group" aria-label="Filtrar clientes por sector">
+      <button type="button" class="chip on" data-r="all" aria-pressed="true" onclick="filtrarRubro(this)">Todos <b>32</b></button>
+      <button type="button" class="chip" data-r="salud" aria-pressed="false" onclick="filtrarRubro(this)">Salud y centros m&eacute;dicos <b>4</b></button>
+      <button type="button" class="chip" data-r="construccion" aria-pressed="false" onclick="filtrarRubro(this)">Construcci&oacute;n e industria <b>3</b></button>
+      <button type="button" class="chip" data-r="automotriz" aria-pressed="false" onclick="filtrarRubro(this)">Automotriz, renta y movilidad <b>7</b></button>
+      <button type="button" class="chip" data-r="ferreteria" aria-pressed="false" onclick="filtrarRubro(this)">Ferreter&iacute;a, pinturas y materiales <b>2</b></button>
+      <button type="button" class="chip" data-r="mobiliario" aria-pressed="false" onclick="filtrarRubro(this)">Mobiliario y retail del hogar <b>3</b></button>
+      <button type="button" class="chip" data-r="agro" aria-pressed="false" onclick="filtrarRubro(this)">Agropecuario y agroindustria <b>2</b></button>
+      <button type="button" class="chip" data-r="gastronomia" aria-pressed="false" onclick="filtrarRubro(this)">Gastronom&iacute;a, hoteler&iacute;a y entretenimiento <b>6</b></button>
+      <button type="button" class="chip" data-r="publico" aria-pressed="false" onclick="filtrarRubro(this)">Sector p&uacute;blico, miner&iacute;a y cooperativas <b>3</b></button>
+      <button type="button" class="chip" data-r="telecom" aria-pressed="false" onclick="filtrarRubro(this)">Servicios y telecomunicaciones <b>2</b></button>
+    </div>
+
+    <div class="rubro" data-r="salud">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 3 10 2.5-5H21"></path></svg>
+        <h3>Salud y centros m&eacute;dicos</h3>
+        <b>04</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/cereca.png" alt="" width="57" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Centro Regional Cardiovascular &mdash; CERECA</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/cemeve.png" alt="" width="58" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Centro de Especialidades M&eacute;dicos Veganos &mdash; CEMEVE</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/dominico-cubano.png" alt="" width="76" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Centro M&eacute;dico Dominico Cubano</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><span class="mono" aria-hidden="true">ST</span></span>
+            <figcaption>Cl&iacute;nica Santo Tom&aacute;s &mdash; Barahona</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="construccion">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"></path><path d="M6 21V8l6-4 6 4v13"></path><path d="M10 21v-6h4v6"></path></svg>
+        <h3>Construcci&oacute;n e industria</h3>
+        <b>03</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/charleston.png" alt="" width="110" height="50" loading="lazy" decoding="async"></span>
+            <figcaption>Constructora e Inversiones Charleston, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><span class="mono" aria-hidden="true">GA</span></span>
+            <figcaption>Grupo ARCON, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/cs-todo-metal.png" alt="" width="102" height="54" loading="lazy" decoding="async"></span>
+            <figcaption>CS Todo Metal, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="automotriz">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 16h14"></path><path d="M6.5 16l1.2-5.2A2 2 0 0 1 9.6 9.2h4.8a2 2 0 0 1 1.9 1.6L17.5 16"></path><path d="M4 16v3h3v-3M17 16v3h3v-3"></path><circle cx="8" cy="16" r="1.4"></circle><circle cx="16" cy="16" r="1.4"></circle></svg>
+        <h3>Automotriz, renta y movilidad</h3>
+        <b>07</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/auto-mayella.png" alt="" width="58" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Auto Mayella, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/soluciones-vr.png" alt="" width="70" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Soluciones Vicente Ram&iacute;rez, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/elvin-auto-parts.png" alt="" width="57" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Elvin Auto Parts, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/fascar.png" alt="" width="67" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Fascar, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/ev-express.png" alt="" width="123" height="45" loading="lazy" decoding="async"></span>
+            <figcaption>E&amp;V Express, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/embi.png" alt="" width="109" height="50" loading="lazy" decoding="async"></span>
+            <figcaption>Embi Comercial, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/mideca.png" alt="" width="94" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Mideca Importaciones, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="ferreteria">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5a3.5 3.5 0 0 0-4.6 4.4L4 15.8 6.2 18l5.9-5.9a3.5 3.5 0 0 0 4.4-4.6L14 10l-2-2z"></path><path d="M15 15l4 4"></path></svg>
+        <h3>Ferreter&iacute;a, pinturas y materiales</h3>
+        <b>02</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/pintureca.png" alt="" width="58" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Pintureca, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/serie48.png" alt="" width="130" height="42" loading="lazy" decoding="async"></span>
+            <figcaption>Ferreter&iacute;a Serie 48, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="mobiliario">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path><path d="M3 11h18v6H3z"></path><path d="M6 17v3M18 17v3"></path></svg>
+        <h3>Mobiliario y retail del hogar</h3>
+        <b>03</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/ashley.png" alt="" width="108" height="51" loading="lazy" decoding="async"></span>
+            <figcaption>Ashley Homestore, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/cibao-muebles.png" alt="" width="100" height="55" loading="lazy" decoding="async"></span>
+            <figcaption>Cibao Muebles, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/casa-marte.png" alt="" width="94" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Casa Marte, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="agro">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V9"></path><path d="M12 12c0-4 3-7 8-7 0 5-3 8-8 8z"></path><path d="M12 16c0-3-2.5-5-6-5 0 3.6 2.5 5 6 5z"></path></svg>
+        <h3>Agropecuario y agroindustria</h3>
+        <b>02</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/agroquimica-las-palmas.png" alt="" width="126" height="43" loading="lazy" decoding="async"></span>
+            <figcaption>Agroqu&iacute;mica Las Palmas</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/denoagro.png" alt="" width="94" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Denoagro, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="gastronomia">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v7a2.5 2.5 0 0 0 5 0V3"></path><path d="M8.5 10v11"></path><path d="M18 3c-1.7 1.5-2.5 3.5-2.5 6 0 1.7.8 2.7 2.5 3v9"></path></svg>
+        <h3>Gastronom&iacute;a, hoteler&iacute;a y entretenimiento</h3>
+        <b>06</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/oh-lala.png" alt="" width="116" height="47" loading="lazy" decoding="async"></span>
+            <figcaption>Oh La La Experience, SRL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/losrobles.png" alt="" width="110" height="50" loading="lazy" decoding="async"></span>
+            <figcaption>Panader&iacute;a Los Robles</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/allaperto.png" alt="" width="95" height="57" loading="lazy" decoding="async"></span>
+            <figcaption>Pizzer&iacute;a All'Aperto</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/lovera.png" alt="" width="53" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Discoteca Lovera</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/hotellovera.png" alt="" width="119" height="46" loading="lazy" decoding="async"></span>
+            <figcaption>Hotel Lovera</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/matrix.png" alt="" width="60" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Matrix Cross Fitness, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="publico">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6"></path><path d="M4 10v9M20 10v9M8 10v9M12 10v9M16 10v9"></path><path d="M2 21h20"></path></svg>
+        <h3>Sector p&uacute;blico, miner&iacute;a y cooperativas</h3>
+        <b>03</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/barrick.png" alt="" width="150" height="33" loading="lazy" decoding="async"></span>
+            <figcaption>Barrick Pueblo Viejo</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><span class="mono" aria-hidden="true">LV</span></span>
+            <figcaption>Ayuntamiento Municipal de La Vega</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><span class="mono" aria-hidden="true">CV</span></span>
+            <figcaption>Cooperativa COOPEVEGA</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="rubro" data-r="telecom">
+      <div class="rubro__h rv rv--up">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18l7-13 7 13"></path><path d="M8.2 13h7.6"></path><path d="M3.5 8.5a7 7 0 0 1 0-5M20.5 8.5a7 7 0 0 0 0-5"></path></svg>
+        <h3>Servicios y telecomunicaciones</h3>
+        <b>02</b>
+      </div>
+      <div class="marcas rv rv--up">
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/cvtel.png" alt="" width="59" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Carlos V&aacute;squez Telecomunicaciones &mdash; CVTEL</figcaption>
+          </figure>
+        </div>
+        <div class="marca">
+          <figure>
+            <span class="lg"><img src="logos/ferramientas.png" alt="" width="82" height="58" loading="lazy" decoding="async"></span>
+            <figcaption>Ferramientas &amp; Mass, SRL</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -4056,6 +6088,70 @@ body { background: transparent; }
   // señal mas barata de que un sitio esta abandonado.
   var a = document.getElementById('anno');
   if (a) a.textContent = new Date().getFullYear();
+})();
+</script>
+
+<!-- ============ SECCIONES NUEVAS: METODO Y CLIENTES ============ -->
+<script>
+(function () {
+  'use strict';
+
+  /* Los paneles animan grid-template-rows de 0fr a 1fr. No hay que
+     medir nada, y el panel crece solo si por dentro se despliega un
+     procedimiento del catalogo. Se abren y cierran de forma
+     independiente: quien quiera comparar dos servicios los necesita
+     abiertos a la vez. */
+  function alternar(btn, fila, clase) {
+    var abierto = fila.classList.toggle(clase);
+    btn.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    return abierto;
+  }
+
+  window.abrirMet = function (btn) {
+    alternar(btn, btn.parentElement, 'abierta');
+  };
+
+  window.abrirProc = function (btn) {
+    alternar(btn, btn.parentElement, 'abierta');
+  };
+
+  /* Filtro de clientes por rubro. Un bloque oculto nunca cruzo el
+     observador de revelados, asi que al mostrarlo hay que darle el
+     visto bueno a mano o entraria invisible. */
+  window.filtrarRubro = function (btn) {
+    var r = btn.getAttribute('data-r');
+
+    document.querySelectorAll('.filtros .chip').forEach(function (c) {
+      var on = (c === btn);
+      c.classList.toggle('on', on);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+
+    document.querySelectorAll('.rubro').forEach(function (bloque) {
+      var ver = (r === 'all' || bloque.getAttribute('data-r') === r);
+      bloque.hidden = !ver;
+      if (ver) {
+        bloque.querySelectorAll('.rv').forEach(function (el) { el.classList.add('on'); });
+      }
+    });
+  };
+
+  /* La matriz de cien celdas entra escalonada, pero solo cuando el
+     bloque que la contiene ya se revelo. Si el visitante pidio menos
+     movimiento, el CSS la deja puesta y esto no hace falta. */
+  (function matriz() {
+    var m = document.querySelector('.dotm');
+    if (!m) return;
+    if (!('IntersectionObserver' in window)) { m.classList.add('on'); return; }
+    var io = new IntersectionObserver(function (ent) {
+      ent.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('on');
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.25 });
+    io.observe(m);
+  })();
 })();
 </script>
 </body>

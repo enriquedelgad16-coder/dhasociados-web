@@ -91,6 +91,47 @@
       SALAS[j].p = Math.min(Math.max(SALAS[j].p, SALAS[j - 1].p + 0.006),
                             1 - 0.006 * (n - 1 - j));
     }
+
+    /* --- Presupuesto de movimiento por sala -----------------
+       Cada sala avanza lo mismo (un zoom R y un barrido) sin
+       importar cuanto scroll ocupe. Con la pagina corta eso
+       funcionaba; al crecer, una sala que antes cubria una
+       seccion pasa a cubrir cinco y el mismo recorrido repartido
+       entre cinco veces mas rueda deja de percibirse: el fondo
+       parece congelado.
+
+       La correccion es dar a cada sala movimiento en proporcion
+       al terreno que le toca, midiendolo contra el reparto
+       parejo. Asi la CAMARA MANTIENE SU VELOCIDAD aunque las
+       salas sean desiguales, que es lo que el ojo juzga.      */
+    var parejo = 1 / (n - 1);
+    for (var k = 0; k < n - 1; k++) {
+      var largo = SALAS[k + 1].p - SALAS[k].p;
+      SALAS[k].amp = Math.min(2.2, Math.max(0.8, largo / parejo));
+    }
+    SALAS[n - 1].amp = SALAS[n - 2].amp;
+
+    /* --- Reparto del metraje ---------------------------------
+       El video es un solo plano continuo por la sede. Darle a
+       cada sala el mismo trozo de metraje solo funciona si todas
+       ocupan el mismo scroll; cuando no, las salas cortas pasan
+       el video a camara rapida y las largas lo dejan casi
+       parado, que es justo lo contrario de un recorrido.
+
+       Se reparte entonces segun el terreno de cada sala, con un
+       tercio de reparto parejo para que ninguna se quede sin
+       aire y cada estancia siga cayendo cerca de su seccion.  */
+    var peso = 0;
+    for (var q = 0; q < n - 1; q++) {
+      SALAS[q].peso = 0.34 * parejo + 0.66 * (SALAS[q + 1].p - SALAS[q].p);
+      peso += SALAS[q].peso;
+    }
+    var suma = 0;
+    for (var r2 = 0; r2 < n - 1; r2++) {
+      SALAS[r2].t0 = suma / peso;
+      suma += SALAS[r2].peso;
+    }
+    SALAS[n - 1].t0 = 1;
   }
 
   /* --- Estado del viaje ------------------------------------
@@ -124,7 +165,7 @@
 
   /* Donde estamos: que sala, cuanto de la siguiente, y con
      cuanta calma. Lo comparten los dos motores.             */
-  var lugar = { j: 0, u: 0, mira: 0, calma: 0 };
+  var lugar = { j: 0, u: 0, mira: 0, calma: 0, amp: 1, metraje: 0 };
   function situar() {
     var j = 0;
     while (j < SALAS.length - 2 && p >= SALAS[j + 1].p) j++;
@@ -134,6 +175,11 @@
     lugar.u = u;
     lugar.mira = A.mira + (B.mira - A.mira) * u;
     lugar.calma = A.calma + (B.calma - A.calma) * u;
+    lugar.amp = A.amp || 1;
+    // fraccion del metraje, ya repartida segun el terreno
+    var a0 = (A.t0 === undefined) ? j / (SALAS.length - 1) : A.t0;
+    var b0 = (B.t0 === undefined) ? (j + 1) / (SALAS.length - 1) : B.t0;
+    lugar.metraje = a0 + (b0 - a0) * u;
   }
 
   /* =========================================================
@@ -169,7 +215,9 @@
     var w = anchoAct, h = altoAct;
     var r = Math.max(w / im.width, h / im.height) * escala;
     var dw = im.width * r, dh = im.height * r;
-    var dx = (w - dw) / 2 + desvio * w * 0.035;
+    var margen = Math.max(0, (dw - w) / 2);
+    var lado = Math.max(-0.92, Math.min(0.92, desvio)) * margen;
+    var dx = (w - dw) / 2 + lado;
     var dy = (h - dh) / 2;
     ctx.globalAlpha = alfa;
     ctx.drawImage(im, dx, dy, dw, dh);
@@ -192,13 +240,23 @@
     // ve, se nota. Impide que la imagen se congele cuando el
     // lector deja de desplazarse.
     var alienta = 1 + Math.sin(vida * 0.21) * 0.004;
-    var deriva = lugar.mira + Math.sin(vida * 0.17) * 0.05;
+    /* El barrido lateral y el avance crecen con el terreno que
+       cubre la sala. Una sala larga se recorre entera, no se
+       queda quieta esperando a la siguiente. */
+    /* El presupuesto de la sala se reparte entre avanzar y barrer.
+       El barrido es el que salva los tramos largos: ampliar mas una
+       fotografia de 1920px la ablanda, mientras que cruzarla de lado
+       a lado no cuesta un solo pixel de nitidez.                  */
+    var deriva = lugar.mira * 0.5
+               + (u - 0.5) * 1.6
+               + Math.sin(vida * 0.17) * 0.04;
+    var Rj = 1 + (R - 1) * Math.min(lugar.amp, 2.2);
 
     ctx.fillStyle = '#EEF3FA';
     ctx.fillRect(0, 0, anchoAct, altoAct);
 
     // Detras, la sala que llega
-    dibujar(fotos[j + 1] || fotos[j], Math.pow(R, u) * alienta, 1, deriva);
+    dibujar(fotos[j + 1] || fotos[j], Math.pow(Rj, u) * alienta, 1, deriva);
 
     /* Delante, la sala que se deja atras: sigue creciendo y se
        disuelve. La disolvencia cae entre el 22% y el 80% del
@@ -208,7 +266,7 @@
     var f = Math.min(1, Math.max(0, (u - 0.22) / 0.58));
     var alfa = 1 - f * f * (3 - 2 * f);
     if (alfa > 0.004) {
-      dibujar(fotos[j], Math.pow(R, 1 + u) * alienta, alfa, deriva);
+      dibujar(fotos[j], Math.pow(Rj, 1 + u) * alienta, alfa, deriva);
     }
   }
 
@@ -253,8 +311,9 @@
     // cambiado la maquinaria.
     mezcla = Math.min(1, mezcla + dt * 0.9);
 
-    var t = (lugar.j + lugar.u) * TRAMO;
-    if (video.duration) t = Math.min(t, video.duration - 0.05);
+    var dur = (video.duration && isFinite(video.duration))
+      ? video.duration : TRAMO * (SALAS.length - 1);
+    var t = Math.min(lugar.metraje * dur, dur - 0.05);
 
     /* La comparacion es contra el tiempo REAL del video, no
        contra el que se pidio la ultima vez. Parece lo mismo y no
